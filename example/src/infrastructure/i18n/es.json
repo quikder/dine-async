@@ -1,5 +1,7 @@
 {
   "dine": {
+    "all": "Todo",
+    "delivery-dish": "Esta opcion solo afecta a los platos y no a la orden completa",
     "dine-in": "En el restaurante",
     "orders": "Ordenes",
     "search": {
