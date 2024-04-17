@@ -1,8 +1,11 @@
 {
   "dine": {
+    "dine-in": "En el restaurante",
     "orders": "Ordenes",
     "search": {
       "order": "Buscar orden"
-    }
+    },
+    "take-order": "Tomar orden",
+    "takeout": "Para llevar"
   }
 }

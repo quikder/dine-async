@@ -1,5 +1,6 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { OrderNavigation } from "./order.navigation";
+import { TakeOrderNavigation } from "./take-order.navigation";
 
 export const Navigation = () => {
 	const Drawer = createDrawerNavigator();
@@ -10,6 +11,11 @@ export const Navigation = () => {
 				component={OrderNavigation}
 				initialParams={{ restaurantId: "858fb246-25f4-4f94-85d7-c69d9503dd79" }}
 			/>
+			<Drawer.Screen
+                name="TakeOrderNavigation"
+                component={TakeOrderNavigation}
+                initialParams={{ restaurantId: "858fb246-25f4-4f94-85d7-c69d9503dd79" }}
+            />
 		</Drawer.Navigator>
 	);
 };
