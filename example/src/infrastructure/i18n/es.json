@@ -1,3 +1,8 @@
 {
-  "orders": "Ordenes"
+  "dine": {
+    "orders": "Ordenes",
+    "search": {
+      "order": "Buscar orden"
+    }
+  }
 }

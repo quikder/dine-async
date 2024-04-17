@@ -1,13 +1,6 @@
-import {
-    ApolloClient,
-    ApolloProvider as ApolloProviderDefault,
-    InMemoryCache,
-    split,
-    //@ts-ignore
-} from "@apollo/client";
+import { ApolloClient, ApolloProvider as ApolloProviderDefault, InMemoryCache } from "@apollo/client";
 //@ts-ignore
 import { setContext } from "@apollo/client/link/context";
-import { getMainDefinition } from "@apollo/client/utilities";
 //@ts-ignore
 import { createUploadLink } from "apollo-upload-client";
 import type { ReactNode } from "react";
@@ -19,16 +12,16 @@ export const ApolloProvider: React.FC<{ children: ReactNode }> = ({
 	const cache = new InMemoryCache();
 
 	const link = createUploadLink({
-		uri: `https://${process.env.EXPO_PUBLIC_API_URL}/graphql/`,
+		uri: "https://7c09-67-81-158-59.ngrok-free.app/graphql/",
 	});
 
-	const splitLink = split(({ query }) => {
-		const definition = getMainDefinition(query);
-		return (
-			definition.kind === "OperationDefinition" &&
-			definition.operation === "subscription"
-		);
-	}, link);
+	// const splitLink = split(({ query }) => {
+	// 	const definition = getMainDefinition(query);
+	// 	return (
+	// 		definition.kind === "OperationDefinition" &&
+	// 		definition.operation === "subscription"
+	// 	);
+	// }, link);
 
 	//@ts-ignore
 	const authLink = setContext((_, { headers }) => {
@@ -43,7 +36,7 @@ export const ApolloProvider: React.FC<{ children: ReactNode }> = ({
 
 	const client = new ApolloClient({
 		//@ts-ignore
-		link: authLink.concat(splitLink),
+		link: authLink.concat(link),
 		cache,
 	});
 
