@@ -1,25 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "verity-quik";
+import { Navigation } from "./navigation";
 
 export default function App() {
 	return (
-		<ThemeProvider>
-			<View style={styles.container}>
-				<Text>aa</Text>
-			</View>
-		</ThemeProvider>
+		<SafeAreaProvider>
+			<ThemeProvider>
+				<NavigationContainer>
+					<Navigation />
+				</NavigationContainer>
+			</ThemeProvider>
+		</SafeAreaProvider>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
-	},
-	box: {
-		width: 60,
-		height: 60,
-		marginVertical: 20,
-	},
-});
