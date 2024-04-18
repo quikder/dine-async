@@ -1,13 +1,15 @@
+import { useRoute } from "@react-navigation/native";
 import { t } from "i18next";
-import { Fragment } from "react/jsx-runtime";
-import { Layout } from "verity-quik";
+import { Layout, ToastUi } from "verity-quik";
+import { CompleteOrder } from "../../complete-order";
 
 export const CompleteOrderScreen = () => {
+	const { restaurantId, billSettings } = useRoute<any>().params;
+
 	return (
 		<Layout title={t("dine.complete-order")} back customTop={-1}>
-			<Fragment>
-                
-            </Fragment>
+			<ToastUi isModal />
+			<CompleteOrder restaurantId={restaurantId} billStings={billSettings} />
 		</Layout>
 	);
 };

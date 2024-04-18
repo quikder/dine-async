@@ -3,12 +3,23 @@
   "dine": {
     "all": "Todo",
     "complete-order": "Completar orden",
+    "customerName": "Nombre del cliente",
+    "delivery": "A domicilio",
     "delivery-dish": "Esta opcion solo afecta a los platos y no a la orden completa",
+    "deliveryType": "Selecion para donde es la orden",
     "dine-in": "En el restaurante",
+    "error": {
+      "customerName": "Se requiere el nombre del cliente",
+      "deliveryType": "Debes indicar para donde es la orden",
+      "table": "Indica el numero de mesa",
+      "table-min": "No puede ser un valor menor a 1"
+    },
     "orders": "Ordenes",
+    "pickup": "Recoger",
     "search": {
       "order": "Buscar orden"
     },
+    "table-number": "Numero de mesa",
     "take-order": "Tomar orden",
     "takeout": "Para llevar"
   }

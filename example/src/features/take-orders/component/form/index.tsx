@@ -18,11 +18,7 @@ export const Form = () => {
 					<Button
 						mode="contained"
 						disabled={totalItems < 1}
-						// onPress={() =>
-						// 	navigate("CompleteOrderScreen", {
-						// 		billSettings: billSettings,
-						// 	})
-						// }
+						onPress={() => navigate("CompleteOrderScreen")}
 					>
 						{`${t("continue")} (${totalItems})`}
 					</Button>
