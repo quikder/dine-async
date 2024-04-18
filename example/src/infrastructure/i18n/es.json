@@ -23,6 +23,10 @@
     "search": {
       "order": "Buscar orden"
     },
+    "success": {
+      "make-order": "La orden se realizo con exito",
+      "title": "Exito"
+    },
     "table-number": "Numero de mesa",
     "take-order": "Tomar orden",
     "takeout": "Para llevar"

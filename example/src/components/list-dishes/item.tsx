@@ -39,7 +39,7 @@ export const Item: FC<Props> = ({
 	const swipeableRef = useRef<Swipeable>(null);
 	const handlePress = () => {
 		swipeableRef?.current?.close();
-		// removeDish(keyId, quantity);
+		removeDish(keyId, quantity);
 	};
 	const renderLeftActions = () => {
 		return (

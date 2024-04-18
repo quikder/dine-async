@@ -14,9 +14,27 @@ export interface DeliveryInstructionsInput {
 	phoneNumber: string;
 }
 
+type DeliveryType = "dine-in" | "takeout" | "pickup" | "delivery" | "";
+
 export interface FormType {
 	customerName: string;
-	deliveryType: string;
+	deliveryType: DeliveryType;
 	tableNumber: string;
 	deliveryInstructionsInput: DeliveryInstructionsInput;
+}
+
+
+interface OrderInformationType {
+	customerName: string;
+	tableNumber: number;
+	deliveryType: DeliveryType;
+}
+
+interface OrderItemType {
+	dishId: string;
+	price: number;
+	quantity: number;
+	isForRestaurant: boolean;
+	note: string;
+	modifierItems: string[];
 }

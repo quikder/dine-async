@@ -103,11 +103,5 @@ export const useOrderStore = create<OrderState>((set) => ({
 			};
 		}),
 
-	clearOrder: () =>
-		set((state) => ({
-			...state,
-			dishes: [],
-			subtotal: 0,
-			totalItems: 0,
-		})),
+	clearOrder: () => set({ dishes: [], subtotal: 0, totalItems: 0 }),
 }));
