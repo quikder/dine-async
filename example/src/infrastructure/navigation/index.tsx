@@ -14,14 +14,14 @@ export const Navigation = () => {
 				name="OrdersNavigation"
 				component={OrderNavigation}
 				initialParams={{
-					restaurantId: "858fb246-25f4-4f94-85d7-c69d9503dd79",
+					restaurantId: restaurant.id,
 				}}
 			/>
 			<Drawer.Screen
 				name="TakeOrderNavigation"
 				component={TakeOrderNavigation}
 				initialParams={{
-					restaurantId: "858fb246-25f4-4f94-85d7-c69d9503dd79",
+					restaurantId: restaurant.id,
 					billSettings: restaurant.billSettings,
 				}}
 			/>

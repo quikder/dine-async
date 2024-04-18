@@ -10,6 +10,7 @@ interface BillSettingType {
 }
 
 interface RestaurantType {
+	id: string
 	billSettings: BillSettingType;
 }
 
@@ -19,6 +20,7 @@ interface TeamMemberType {
 
 export const ProfileContext = createContext<TeamMemberType>({
 	restaurant: {
+		id: "",
 		billSettings: {
 			taxPercentage: 0,
 			isIncludeTip: false,

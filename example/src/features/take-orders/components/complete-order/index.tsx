@@ -9,15 +9,8 @@ import { useOrderStore } from "../../../../services/store/take-order";
 import { Form } from "./form";
 import type { FormType } from "./types";
 
-interface BillSettingType {
-	taxPercentage: number;
-	isIncludeTip: boolean;
-	tipPercentage: number;
-}
-
 interface Props {
 	restaurantId: string;
-	billStings: BillSettingType;
 }
 
 export const CompleteOrder: FC<Props> = () => {
@@ -57,7 +50,6 @@ export const CompleteOrder: FC<Props> = () => {
 
 	const onSubmit = (data: FormType) => {
 		console.log(data);
-		
 	};
 
 	return (
@@ -67,7 +59,7 @@ export const CompleteOrder: FC<Props> = () => {
 				showsVerticalScrollIndicator={false}
 			>
 				<Form control={control} watch={watch} />
-		
+
 				<ListDishes cart={dishes} isEdit={false} />
 
 				<Button onPress={handleSubmit(onSubmit)}>{t("dine.make-order")}</Button>

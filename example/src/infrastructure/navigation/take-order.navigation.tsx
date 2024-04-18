@@ -5,7 +5,7 @@ import { CompleteOrderScreen } from "../../features/take-orders/screen/comple-or
 import { TakeOrderScreen } from "../../features/take-orders/screen/take-order.screen";
 
 export const TakeOrderNavigation = () => {
-	const { restaurantId, billSettings } = useRoute<any>().params;
+	const { restaurantId } = useRoute<any>().params;
 	const Stack = createNativeStackNavigator();
 
 	return (
@@ -19,7 +19,7 @@ export const TakeOrderNavigation = () => {
 				<Stack.Screen
 					name="CompleteOrderScreen"
 					component={CompleteOrderScreen}
-					initialParams={{ restaurantId, billSettings }}
+					initialParams={{ restaurantId }}
 					options={{ presentation: "formSheet" }}
 				/>
 			</Stack.Navigator>
