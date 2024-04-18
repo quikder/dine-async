@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { I18nextProvider } from 'react-i18next';
+import { I18nextProvider } from "react-i18next";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "verity-quik";
 import { ProfileProvider } from "../utils/profile.context";
@@ -11,15 +12,17 @@ export default function App() {
 	return (
 		<SafeAreaProvider>
 			<I18nextProvider i18n={i18n}>
-				<ThemeProvider>
-					<ApolloProvider>
-						<ProfileProvider>
-							<NavigationContainer>
-								<Navigation />
-							</NavigationContainer>
-						</ProfileProvider>
-					</ApolloProvider>
-				</ThemeProvider>
+				<GestureHandlerRootView style={{ flex: 1 }}>
+					<ThemeProvider>
+						<ApolloProvider>
+							<ProfileProvider>
+								<NavigationContainer>
+									<Navigation />
+								</NavigationContainer>
+							</ProfileProvider>
+						</ApolloProvider>
+					</ThemeProvider>
+				</GestureHandlerRootView>
 			</I18nextProvider>
 		</SafeAreaProvider>
 	);
