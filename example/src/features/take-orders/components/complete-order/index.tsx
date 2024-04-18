@@ -4,8 +4,8 @@ import type { FC } from "react";
 import { useForm } from "react-hook-form";
 import { ScrollView, View, useWindowDimensions } from "react-native";
 import { Button, useUpdateEffect } from "verity-quik";
-import { ListDishes } from "../../../components/list-dishes";
-import { useOrderStore } from "../../../services/store/take-order";
+import { ListDishes } from "../../../../components/list-dishes";
+import { useOrderStore } from "../../../../services/store/take-order";
 import { Form } from "./form";
 import type { FormType } from "./types";
 
@@ -67,7 +67,7 @@ export const CompleteOrder: FC<Props> = () => {
 				showsVerticalScrollIndicator={false}
 			>
 				<Form control={control} watch={watch} />
-
+		
 				<ListDishes cart={dishes} isEdit={false} />
 
 				<Button onPress={handleSubmit(onSubmit)}>{t("dine.make-order")}</Button>
