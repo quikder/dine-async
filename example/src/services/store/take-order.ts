@@ -36,21 +36,30 @@ export const useOrderStore = create<OrderState>((set) => ({
 
 				if (existingDish) {
 					existingDish.quantity += dish.quantity;
-					existingDish.price  = existingDish.price * dish.quantity;
+
+					// Redondear el subtotal después de cada operación de suma
+					const subtotal = Number.parseFloat(
+						(state.subtotal + dish.price * dish.quantity).toFixed(2),
+					);
 
 					return {
 						dishes: updatedDishes,
-						subtotal: state.subtotal + dish.price * dish.quantity,
+						subtotal,
 						totalItems: state.totalItems + dish.quantity,
 					};
 				}
 			} else {
+				const subtotal = Number.parseFloat(
+					(state.subtotal + dish.price * dish.quantity).toFixed(2),
+				);
+
 				return {
 					dishes: [...state.dishes, dish],
-					subtotal: state.subtotal + dish.price * dish.quantity,
+					subtotal,
 					totalItems: state.totalItems + dish.quantity,
 				};
 			}
+
 			return state;
 		}),
 }));

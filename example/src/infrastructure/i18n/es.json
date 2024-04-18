@@ -1,6 +1,8 @@
 {
+  "continue": "Continuar",
   "dine": {
     "all": "Todo",
+    "complete-order": "Completar orden",
     "delivery-dish": "Esta opcion solo afecta a los platos y no a la orden completa",
     "dine-in": "En el restaurante",
     "orders": "Ordenes",

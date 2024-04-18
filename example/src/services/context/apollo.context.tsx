@@ -16,7 +16,7 @@ export const ApolloProvider: React.FC<{ children: ReactNode }> = ({
 	const cache = new InMemoryCache();
 
 	const link = createUploadLink({
-		uri: "https://7c09-67-81-158-59.ngrok-free.app/graphql/",
+		uri: "https://b719-67-81-158-59.ngrok-free.app/graphql/",
 	});
 
 	// const splitLink = split(({ query }) => {
