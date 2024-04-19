@@ -12,6 +12,7 @@ export const Navigation = () => {
 	return (
 		<OrderProvider
 			restaurantId={restaurant.id}
+			serverBy={"Michael Davis"}
 			subscriptionRoom={restaurant.subscriptionRoom}
 		>
 			<Drawer.Navigator screenOptions={{ headerShown: false }}>

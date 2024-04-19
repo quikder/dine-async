@@ -66,8 +66,7 @@ export interface ModifierType {
 }
 
 export interface ServerByType {
-	firstName: string;
-	lastName: string;
+	name: string;
 }
 
 export interface FinancialDetailsType {

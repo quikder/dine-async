@@ -13,11 +13,13 @@ interface Props {
 	children: ReactNode;
 	restaurantId: string;
 	subscriptionRoom: string;
+	serverBy: string;
 }
 export const OrderProvider: FC<Props> = ({
 	children,
 	restaurantId,
 	subscriptionRoom,
+	serverBy,
 }) => {
 	useSubscription(NEW_ORDER, {
 		onData: (data) => {
@@ -31,7 +33,9 @@ export const OrderProvider: FC<Props> = ({
 			const newOrder: OrderType = data.data.data.newOrder.order;
 			console.log(newOrder);
 
-			sendNotification(newOrder);
+			if (serverBy !== newOrder.servedBy.name) {
+				sendNotification(newOrder);
+			}
 
 			if (cacheOrders) {
 				const { allOrders } = cacheOrders;

@@ -12,18 +12,18 @@ export default function App() {
 	return (
 		<SafeAreaProvider>
 			<I18nextProvider i18n={i18n}>
-				<GestureHandlerRootView style={{ flex: 1, zIndex: -1 }}>
-					<ThemeProvider>
+				<ThemeProvider>
+					<ToastUi />
+					<GestureHandlerRootView style={{ flex: 1, zIndex: -1 }}>
 						<ApolloProvider role="cashier">
 							<ProfileProvider>
 								<NavigationContainer>
-									<ToastUi />
 									<Navigation />
 								</NavigationContainer>
 							</ProfileProvider>
 						</ApolloProvider>
-					</ThemeProvider>
-				</GestureHandlerRootView>
+					</GestureHandlerRootView>
+				</ThemeProvider>
 			</I18nextProvider>
 		</SafeAreaProvider>
 	);

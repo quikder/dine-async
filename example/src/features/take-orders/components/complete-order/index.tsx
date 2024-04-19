@@ -57,8 +57,6 @@ export const CompleteOrder: FC<Props> = ({ restaurantId }) => {
 
 	const [order, { loading }] = useMutation(TAKE_ORDER, {
 		async update(_, { data: { takeOrderRestaurant } }) {
-			console.log(takeOrderRestaurant);
-
 			if (takeOrderRestaurant?.success) {
 				Toast.show({
 					type: "success",
