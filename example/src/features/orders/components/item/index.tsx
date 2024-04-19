@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { t } from "i18next";
 import type { FC } from "react";
 import { View } from "react-native";
@@ -12,6 +13,46 @@ interface Props {
 }
 
 export const Item: FC<Props> = ({ order }) => {
+	const { navigate } = useNavigation<any>();
+
+	const actions = (actionKey: string) => {
+		switch (actionKey) {
+			case "add-dishes":
+				console.log("Anadir plato");
+				break;
+
+			case "charge-cash":
+				navigate("PaymentNavigation", {
+					screen: "CashScreen",
+					params: { order },
+				});
+				break;
+
+			case "charge-qr":
+				console.log("Cobrar con codigo qr");
+				break;
+
+			case "charge-custom":
+				console.log("Cobro personalizado");
+				break;
+
+			case "invoice-print":
+				console.log("Imprimir factura");
+				break;
+
+			case "invoice-mail":
+				console.log("Mandar factura por correo");
+				break;
+
+			case "refund-cancel":
+				console.log("Cancelar orden");
+				break;
+
+			default:
+				break;
+		}
+	};
+
 	const {
 		status,
 		customerName,
@@ -103,7 +144,7 @@ export const Item: FC<Props> = ({ order }) => {
 						},
 						menuItems: [
 							{
-								actionKey: "charge-cash",
+								actionKey: "invoice-print",
 								actionTitle: t("dine.print"),
 								icon: {
 									type: "IMAGE_SYSTEM",
@@ -114,7 +155,7 @@ export const Item: FC<Props> = ({ order }) => {
 								},
 							},
 							{
-								actionKey: "charge-qr",
+								actionKey: "invoice-mail",
 								actionTitle: t("dine.mail"),
 								icon: {
 									type: "IMAGE_SYSTEM",
@@ -141,6 +182,7 @@ export const Item: FC<Props> = ({ order }) => {
 					},
 				],
 			}}
+			onPressMenuItem={({ nativeEvent }) => actions(nativeEvent.actionKey)}
 			previewConfig={{
 				previewType: "CUSTOM",
 				previewSize: "STRETCH",

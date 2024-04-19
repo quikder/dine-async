@@ -3,6 +3,7 @@
   "dine": {
     "add-dishes": "Anadir platos",
     "all": "Todo",
+    "amount": "Cantidad",
     "cancel": "Cancelar",
     "charge": "Cobrar",
     "charge-cash": "Efectivo",
@@ -18,6 +19,8 @@
     "deliveryType": "Selecion para donde es la orden",
     "dine-in": "En el restaurante",
     "error": {
+      "amount": "Indica la cantida con la que estan pagando",
+      "amount-min": "No puede ser menos del total de la orden",
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
       "table": "Indica el numero de mesa",
@@ -46,6 +49,7 @@
     },
     "table-number": "Numero de mesa",
     "take-order": "Tomar orden",
-    "takeout": "Para llevar"
+    "takeout": "Para llevar",
+    "total": "Total"
   }
 }
