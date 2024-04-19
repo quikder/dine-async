@@ -2,11 +2,12 @@ import { useQuery } from "@apollo/client";
 import type { Moment } from "moment";
 import moment from "moment";
 import type { FC } from "react";
-import { FlatList } from "react-native";
-import { DataTable, Text } from "react-native-paper";
+import { FlatList, View } from "react-native";
+import { DataTable } from "react-native-paper";
 import { ErrorServer, Loading } from "verity-quik";
 import { ALL_ORDERS } from "../../../../services/graphql/orders/query";
 import type { OrderStatusType, OrderType } from "../../types";
+import { Item } from "../item";
 
 interface Props {
 	restaurantId: string;
@@ -32,7 +33,12 @@ export const List: FC<Props> = ({
 		},
 	});
 
-	if (loading) return <Loading />;
+	if (loading)
+		return (
+			<View style={{ marginTop: 16 }}>
+				<Loading />
+			</View>
+		);
 
 	if (error) return <ErrorServer error={error} refetch={refetch} />;
 
@@ -50,15 +56,11 @@ export const List: FC<Props> = ({
 		);
 	};
 
-	// console.log(data);
-	
-
 	return (
-		<DataTable style={{ flex: 1 }}>
+		<DataTable style={{ flex: 1, marginTop: 16 }}>
 			<FlatList
-				//@ts-ignore
-				data={filteredAndSortedOrder}
-				renderItem={({ item }) => <Text>{item.customerName}</Text>}
+				data={filteredAndSortedOrder()}
+				renderItem={({ item }) => <Item order={item} />}
 				keyExtractor={(item: OrderType) => item.id}
 			/>
 		</DataTable>

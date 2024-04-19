@@ -1,7 +1,13 @@
 {
   "continue": "Continuar",
   "dine": {
+    "add-dishes": "Anadir platos",
     "all": "Todo",
+    "cancel": "Cancelar",
+    "charge": "Cobrar",
+    "charge-cash": "Efectivo",
+    "charge-custom": "Personalizado",
+    "charge-qr": "Codigo qr",
     "complete-order": "Completar orden",
     "customerName": "Nombre del cliente",
     "delete": {
@@ -17,6 +23,8 @@
       "table": "Indica el numero de mesa",
       "table-min": "No puede ser un valor menor a 1"
     },
+    "invoice": "Factura",
+    "mail": "Correo electornico",
     "make-order": "Ordenar",
     "new-order": {
       "delivery": "Nueva orden a domicilio",
@@ -27,6 +35,8 @@
     },
     "orders": "Ordenes",
     "pickup": "Recoger",
+    "print": "Imprimir",
+    "refund": "Rembolsar",
     "search": {
       "order": "Buscar orden"
     },
