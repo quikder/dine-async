@@ -50,6 +50,9 @@ export const List: FC<Props> = ({
 		);
 	};
 
+	console.log(data);
+	
+
 	return (
 		<DataTable style={{ flex: 1 }}>
 			<FlatList

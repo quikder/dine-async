@@ -18,11 +18,7 @@ query TeamMember{
   teamMemberProfile{
     restaurant{
       id
-      billSettings{
-        taxPercentage
-        isIncludeTip
-        tipPercentage
-      }
+      subscriptionRoom
     }
   }
 }

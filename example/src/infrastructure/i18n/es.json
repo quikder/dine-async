@@ -18,6 +18,13 @@
       "table-min": "No puede ser un valor menor a 1"
     },
     "make-order": "Ordenar",
+    "new-order": {
+      "delivery": "Nueva orden a domicilio",
+      "dine-in": "Nueva orden para la mesa {{tableNumber}}",
+      "pickup": "Nueva orden para recoger",
+      "takeout": "Nueva orden para llevar",
+      "title": "Nueva orden"
+    },
     "orders": "Ordenes",
     "pickup": "Recoger",
     "search": {

@@ -12,6 +12,9 @@
 			},
 			"style": {
 				"noUselessElse": "off"
+			},
+			"a11y": {
+				"useValidAriaRole": "off"
 			}
 		}
 	}
