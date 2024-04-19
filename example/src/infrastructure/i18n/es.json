@@ -24,7 +24,8 @@
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
       "table": "Indica el numero de mesa",
-      "table-min": "No puede ser un valor menor a 1"
+      "table-min": "No puede ser un valor menor a 1",
+      "title": "Error"
     },
     "invoice": "Factura",
     "mail": "Correo electornico",
@@ -51,5 +52,10 @@
     "take-order": "Tomar orden",
     "takeout": "Para llevar",
     "total": "Total"
+  },
+  "error": {
+    "payment": {
+      "ready": "Esta orden ya ha sido pagada"
+    }
   }
 }

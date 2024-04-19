@@ -7,8 +7,6 @@ export const SuccessScreen = () => {
 	const params = useRoute<any>().params;
 	const theme = useTheme();
 
-    
-
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
 			<Success change={params?.change} order={params?.order} />

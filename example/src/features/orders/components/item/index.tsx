@@ -23,7 +23,8 @@ export const Item: FC<Props> = ({ order }) => {
 
 			case "charge-cash":
 				navigate("PaymentNavigation", {
-					screen: "SuccessScreen",
+					order,
+					screen: "CashScreen",
 					params: { order },
 				});
 				break;

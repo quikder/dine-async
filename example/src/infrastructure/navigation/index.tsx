@@ -21,6 +21,7 @@ export const Navigation = () => {
 					component={OrderNavigation}
 					initialParams={{
 						restaurantId: restaurant.id,
+						subscriptionRoom: restaurant.subscriptionRoom,
 					}}
 				/>
 				<Drawer.Screen
