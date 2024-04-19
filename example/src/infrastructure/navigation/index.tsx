@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { useProfile } from "../../../utils/profile.context";
 import { OrderProvider } from "../../services/context/order.provider";
-import { OrderNavigation } from "./order.navigation";
+import { OrderNavigation } from "./order-navigation";
 import { TakeOrderNavigation } from "./take-order.navigation";
 
 export const Navigation = () => {
