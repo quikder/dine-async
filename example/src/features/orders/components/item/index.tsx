@@ -75,6 +75,7 @@ export const Item: FC<Props> = ({ order }) => {
 					{
 						actionKey: "add-dishes",
 						actionTitle: t("dine.add-dishes"),
+						menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
 						icon: {
 							type: "IMAGE_SYSTEM",
 							imageValue: {
@@ -99,6 +100,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-cash",
 								actionTitle: t("dine.charge-cash"),
+								menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {
@@ -110,6 +112,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-qr",
 								actionTitle: t("dine.charge-qr"),
+								menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {
@@ -121,6 +124,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-custom",
 								actionTitle: t("dine.charge-custom"),
+								menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {
