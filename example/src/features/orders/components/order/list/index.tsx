@@ -5,8 +5,8 @@ import type { FC } from "react";
 import { FlatList, View } from "react-native";
 import { DataTable } from "react-native-paper";
 import { ErrorServer, Loading } from "verity-quik";
-import { ALL_ORDERS } from "../../../../services/graphql/orders/query";
-import type { OrderStatusType, OrderType } from "../../types";
+import { ALL_ORDERS } from "../../../../../services/graphql/orders/query";
+import type { OrderStatusType, OrderType } from "../../../types";
 import { Item } from "../item";
 
 interface Props {

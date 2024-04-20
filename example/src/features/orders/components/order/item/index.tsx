@@ -5,8 +5,8 @@ import { View } from "react-native";
 import { ContextMenuView } from "react-native-ios-context-menu";
 import { DataTable, Text } from "react-native-paper";
 import { useTheme } from "styled-components/native";
-import { MailModal } from "../../../../components/mail-modal";
-import type { OrderType } from "../../types";
+import { MailModal } from "../../../../../components/mail-modal";
+import type { OrderType } from "../../../types";
 import { Body, Cell, Row } from "./styled";
 
 interface Props {

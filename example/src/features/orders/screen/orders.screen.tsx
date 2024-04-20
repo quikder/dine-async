@@ -3,7 +3,7 @@ import { t } from "i18next";
 import moment, { type Moment } from "moment";
 import { useState } from "react";
 import { Layout, Searchbar } from "verity-quik";
-import { List } from "../components/list";
+import { List } from "../components/order/list";
 import type { OrderStatusType } from "../types";
 
 export const OrdersScreen = () => {

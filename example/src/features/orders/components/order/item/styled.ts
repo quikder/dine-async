@@ -1,6 +1,6 @@
 import { DataTable } from "react-native-paper";
 import styled from "styled-components/native";
-import type { OrderStatusType } from "../../types";
+import type { OrderStatusType } from "../../../types";
 
 export const Body = styled.TouchableOpacity`
     width: 100%;
