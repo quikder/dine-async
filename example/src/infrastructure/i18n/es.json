@@ -40,6 +40,14 @@
     "orders": "Ordenes",
     "pickup": "Recoger",
     "print": "Imprimir",
+    "qr-pay": {
+      "instrucions": {
+        "step1": "1. Descarga e Instala Quikder: Si aún no tienes la aplicación Quikder, descárgala desde tu tienda de aplicaciones.",
+        "step2": "2. Abre Quikder: Abre la aplicación Quikder en tu dispositivo.",
+        "step3": "3. Escanea el Código QR: Utiliza Quikder para escanear el código QR y realizar tu pago de manera rápida y segura.",
+        "title": "Instruciones"
+      }
+    },
     "refund": "Rembolsar",
     "search": {
       "order": "Buscar orden"

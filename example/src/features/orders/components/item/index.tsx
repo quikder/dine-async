@@ -22,15 +22,23 @@ export const Item: FC<Props> = ({ order }) => {
 				break;
 
 			case "charge-cash":
-				navigate("PaymentNavigation", {
-					order,
-					screen: "CashScreen",
-					params: { order },
-				});
+				isPaid
+					? () => {}
+					: navigate("PaymentNavigation", {
+							order,
+							screen: "CashScreen",
+							params: { order },
+						});
 				break;
 
 			case "charge-qr":
-				console.log("Cobrar con codigo qr");
+				isPaid
+					? () => {}
+					: navigate("PaymentNavigation", {
+							order,
+							screen: "QrScreen",
+							params: { order },
+						});
 				break;
 
 			case "charge-custom":
@@ -75,7 +83,6 @@ export const Item: FC<Props> = ({ order }) => {
 					{
 						actionKey: "add-dishes",
 						actionTitle: t("dine.add-dishes"),
-						menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
 						icon: {
 							type: "IMAGE_SYSTEM",
 							imageValue: {
@@ -100,7 +107,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-cash",
 								actionTitle: t("dine.charge-cash"),
-								menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
+								menuAttributes: isPaid ? ["hidden"] : [],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {
@@ -112,7 +119,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-qr",
 								actionTitle: t("dine.charge-qr"),
-								menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
+								menuAttributes: isPaid ? ["hidden"] : [],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {
@@ -124,7 +131,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-custom",
 								actionTitle: t("dine.charge-custom"),
-								menuAttributes: [isPaid ? "hidden" : "keepsMenuPresented"],
+								menuAttributes: isPaid ? ["hidden"] : [],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {
