@@ -26,7 +26,7 @@ export const MailModal: FC<MailModalProps> = ({
 }) => {
 	const hideModal = () => setVisible(false);
 
-	const { control, handleSubmit } = useForm<Form>({
+	const { control, handleSubmit, reset } = useForm<Form>({
 		defaultValues: {
 			email: "",
 		},
@@ -43,6 +43,7 @@ export const MailModal: FC<MailModalProps> = ({
 						text2: t("dine.success.send-mail"),
 					});
 					hideModal();
+					reset();
 				}
 			},
 			variables: {
