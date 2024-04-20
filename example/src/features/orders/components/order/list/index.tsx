@@ -1,8 +1,9 @@
 import { useQuery } from "@apollo/client";
+import { useRefresh } from "@react-native-community/hooks";
 import type { Moment } from "moment";
 import moment from "moment";
 import type { FC } from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, RefreshControl, View } from "react-native";
 import { DataTable } from "react-native-paper";
 import { ErrorServer, Loading } from "verity-quik";
 import { ALL_ORDERS } from "../../../../../services/graphql/orders/query";
@@ -33,7 +34,17 @@ export const List: FC<Props> = ({
 		},
 	});
 
-	if (loading)
+	const fetch = async () => {
+		try {
+			await refetch();
+		} catch (error) {
+			console.error("Error al refrescar los datos:", error);
+		}
+	};
+
+	const { isRefreshing, onRefresh } = useRefresh(fetch);
+
+	if (loading && data === undefined)
 		return (
 			<View style={{ marginTop: 16 }}>
 				<Loading />
@@ -62,6 +73,13 @@ export const List: FC<Props> = ({
 				data={filteredAndSortedOrder()}
 				renderItem={({ item }) => <Item order={item} />}
 				keyExtractor={(item: OrderType) => item.id}
+				refreshControl={
+					<RefreshControl
+						refreshing={isRefreshing}
+						onRefresh={onRefresh}
+						tintColor="#999999"
+					/>
+				}
 			/>
 		</DataTable>
 	);
