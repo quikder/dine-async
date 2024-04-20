@@ -42,7 +42,13 @@ export const Item: FC<Props> = ({ order }) => {
 				break;
 
 			case "charge-custom":
-				console.log("Cobro personalizado");
+				isPaid
+					? () => {}
+					: navigate("PaymentNavigation", {
+							order,
+							screen: "CustomScreen",
+							params: { order },
+						});
 				break;
 
 			case "invoice-print":
@@ -131,7 +137,7 @@ export const Item: FC<Props> = ({ order }) => {
 							{
 								actionKey: "charge-custom",
 								actionTitle: t("dine.charge-custom"),
-								menuAttributes: isPaid ? ["hidden"] : [],
+								// menuAttributes: isPaid ? ["hidden"] : [],
 								icon: {
 									type: "IMAGE_SYSTEM",
 									imageValue: {

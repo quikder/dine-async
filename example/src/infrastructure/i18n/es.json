@@ -8,6 +8,7 @@
     "charge": "Cobrar",
     "charge-cash": "Efectivo",
     "charge-custom": "Personalizado",
+    "charge-personalized": "Metodo de pago",
     "charge-qr": "Codigo qr",
     "complete-order": "Completar orden",
     "customerName": "Nombre del cliente",
@@ -21,6 +22,9 @@
     "error": {
       "amount": "Indica la cantida con la que estan pagando",
       "amount-min": "No puede ser menos del total de la orden",
+      "charge": {
+        "personalized": "Especifica el metodo del pago"
+      },
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
       "table": "Indica el numero de mesa",
@@ -52,6 +56,7 @@
     "search": {
       "order": "Buscar orden"
     },
+    "send": "Enviar",
     "success": {
       "make-order": "La orden se realizo con exito",
       "title": "Exito"
