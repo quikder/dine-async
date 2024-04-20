@@ -27,6 +27,7 @@
       },
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
+      "mail": "Se requiere el correo electronico",
       "table": "Indica el numero de mesa",
       "table-min": "No puede ser un valor menor a 1",
       "title": "Error"
@@ -57,8 +58,10 @@
       "order": "Buscar orden"
     },
     "send": "Enviar",
+    "send-invoice-mail": "Enviar factura por correo electronico",
     "success": {
       "make-order": "La orden se realizo con exito",
+      "send-mail": "La factura se envio con exito",
       "title": "Exito"
     },
     "table-number": "Numero de mesa",
