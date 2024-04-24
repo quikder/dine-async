@@ -5,6 +5,9 @@
     "all": "Todo",
     "amount": "Cantidad",
     "cancel": "Cancelar",
+    "cancel-dish": "Algunos platos",
+    "cancel-reason": "Rason de la cancelacion",
+    "cancel-total": "Toda la orden",
     "charge": "Cobrar",
     "charge-cash": "Efectivo",
     "charge-custom": "Personalizado",
@@ -19,6 +22,7 @@
     "delivery-dish": "Esta opcion solo afecta a los platos y no a la orden completa",
     "deliveryType": "Selecion para donde es la orden",
     "dine-in": "En el restaurante",
+    "dishes": "Platos",
     "error": {
       "amount": "Indica la cantida con la que estan pagando",
       "amount-min": "No puede ser menos del total de la orden",
@@ -28,6 +32,7 @@
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
       "mail": "Se requiere el correo electronico",
+      "password": "Contrasena de seguridad",
       "table": "Indica el numero de mesa",
       "table-min": "No puede ser un valor menor a 1",
       "title": "Error"
@@ -43,6 +48,7 @@
       "title": "Nueva orden"
     },
     "orders": "Ordenes",
+    "password": "Contrasena",
     "pickup": "Recoger",
     "print": "Imprimir",
     "qr-pay": {

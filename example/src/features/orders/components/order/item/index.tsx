@@ -62,7 +62,7 @@ export const Item: FC<Props> = ({ order }) => {
 				break;
 
 			case "refund-cancel":
-				console.log("Cancelar orden");
+				navigate("CancelScreen", { order });
 				break;
 
 			default:
@@ -245,7 +245,11 @@ export const Item: FC<Props> = ({ order }) => {
 				</Body>
 			</ContextMenuView>
 
-			<MailModal visible={visibleMail} setVisible={setVisibleMail} order={order} />
+			<MailModal
+				visible={visibleMail}
+				setVisible={setVisibleMail}
+				order={order}
+			/>
 		</>
 	);
 };
