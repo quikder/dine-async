@@ -37,7 +37,7 @@ export const Cancel: FC<Props> = ({ order }) => {
 	const [cancelOrder, { loading, data }] = useMutation(CANCELLED_ORDER, {
 		update(_, { data: { cancelledOrder } }) {
 			if (cancelledOrder?.success) {
-				navigate("OrderScreen");
+				navigate("OrdersScreen");
 				Toast.show({
 					type: "success",
 					text1: t("dine.success.title"),
@@ -51,7 +51,7 @@ export const Cancel: FC<Props> = ({ order }) => {
 				});
 
 				clearItems();
-				navigate("OrderScreen");
+				navigate("OrdersScreen");
 			}
 		},
 	});
@@ -73,7 +73,7 @@ export const Cancel: FC<Props> = ({ order }) => {
 		});
 	};
 
-	console.log(data);
+	console.log();
 
 	return (
 		<ScrollView
@@ -125,6 +125,12 @@ export const Cancel: FC<Props> = ({ order }) => {
 				}}
 				label={t("dine.password")}
 				isPassword
+				error={data?.cancelledOrder?.error === "wrong password"}
+				helperText={
+					data?.cancelledOrder?.error === "wrong password"
+						? t("dine.error.password")
+						: ""
+				}
 			/>
 
 			<Button

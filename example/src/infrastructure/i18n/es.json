@@ -32,7 +32,7 @@
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
       "mail": "Se requiere el correo electronico",
-      "password": "Contrasena de seguridad",
+      "password": "Contrasena incorrecta",
       "ready-cancelled": "La orden ya ha sido cancelada",
       "table": "Indica el numero de mesa",
       "table-min": "No puede ser un valor menor a 1",
