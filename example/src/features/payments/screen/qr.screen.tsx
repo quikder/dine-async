@@ -5,9 +5,10 @@ import { Qr } from "../components/qr";
 
 export const QrScreen = () => {
 	const { order } = useRoute<any>().params;
-	console.log(order);
 
-	return <Layout title={t("dine.charge-qr")} back>
-        <Qr qrCode={order?.qrPayment?.qrCode} />
-    </Layout>;
+	return (
+		<Layout title={t("dine.charge-qr")} back>
+			<Qr qrCode={order?.qrPayment?.qrCode} />
+		</Layout>
+	);
 };

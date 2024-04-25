@@ -54,7 +54,6 @@ export const Item: FC<Props> = ({ order }) => {
 				break;
 
 			case "invoice-print":
-				console.log("Imprimir factura");
 				break;
 
 			case "invoice-mail":

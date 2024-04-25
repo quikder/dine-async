@@ -31,7 +31,6 @@ export const OrderProvider: FC<Props> = ({
 			});
 
 			const newOrder: OrderType = data.data.data.newOrder.order;
-			console.log(newOrder);
 
 			if (serverBy !== newOrder.servedBy.name) {
 				sendNotification(newOrder);

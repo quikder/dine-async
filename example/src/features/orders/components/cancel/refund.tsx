@@ -73,8 +73,6 @@ export const Cancel: FC<Props> = ({ order }) => {
 		});
 	};
 
-	console.log(data);
-
 	return (
 		<ScrollView
 			showsVerticalScrollIndicator={false}

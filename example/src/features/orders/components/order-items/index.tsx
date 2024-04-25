@@ -28,8 +28,6 @@ export const OrderItems: FC<Props> = ({ orderItems }) => {
 		{ takeout: [], dinein: [] },
 	);
 
-	console.log(itemGroup);
-
 	return (
 		<Card>
 			<Header />
