@@ -18,10 +18,12 @@
     "delete": {
       "delete": "Eliminar"
     },
+    "delivered": "Entregado?",
     "delivery": "A domicilio",
     "delivery-dish": "Esta opcion solo afecta a los platos y no a la orden completa",
     "deliveryType": "Selecion para donde es la orden",
     "dine-in": "En el restaurante",
+    "dish": "Plato",
     "dishes": "Platos",
     "error": {
       "amount": "Indica la cantida con la que estan pagando",
@@ -48,6 +50,7 @@
       "takeout": "Nueva orden para llevar",
       "title": "Nueva orden"
     },
+    "note": "Nota",
     "orders": "Ordenes",
     "password": "Contrasena",
     "pickup": "Recoger",
@@ -60,6 +63,7 @@
         "title": "Instruciones"
       }
     },
+    "qty": "Cantidad",
     "refund": "Rembolsar",
     "search": {
       "order": "Buscar orden"

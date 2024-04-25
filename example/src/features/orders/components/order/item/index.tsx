@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { t } from "i18next";
 import { type FC, useState } from "react";
-import { View } from "react-native";
 import { ContextMenuView } from "react-native-ios-context-menu";
-import { DataTable, Text } from "react-native-paper";
+import { DataTable } from "react-native-paper";
 import { useTheme } from "styled-components/native";
 import { MailModal } from "../../../../../components/mail-modal";
 import type { OrderType } from "../../../types";
+import { Preview } from "../preview";
 import { Body, Cell, Row } from "./styled";
 
 interface Props {
@@ -209,11 +209,7 @@ export const Item: FC<Props> = ({ order }) => {
 					previewSize: "STRETCH",
 					backgroundColor: theme.colors.background,
 				}}
-				renderPreview={() => (
-					<View>
-						<Text>Custom Menu Preview</Text>
-					</View>
-				)}
+				renderPreview={() => <Preview orderItems={order.items} />}
 			>
 				<Body>
 					<Row $status={status}>
