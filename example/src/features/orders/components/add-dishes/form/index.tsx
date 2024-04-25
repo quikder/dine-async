@@ -1,11 +1,16 @@
 import { useNavigation } from "@react-navigation/native";
 import { t } from "i18next";
+import type { FC } from "react";
 import { useWindowDimensions } from "react-native";
 import { Button } from "verity-quik";
 import { useEditOrderStore } from "../../../../../services/store/edit-order";
 import { Footer } from "./styled";
 
-export const Form = () => {
+interface Props {
+	orderId: string;
+}
+
+export const Form: FC<Props> = ({ orderId }) => {
 	const { navigate } = useNavigation<any>();
 	const { width } = useWindowDimensions();
 
@@ -18,7 +23,7 @@ export const Form = () => {
 					<Button
 						mode="contained"
 						disabled={totalItems < 1}
-						onPress={() => navigate("CompleteOrderScreen")}
+						onPress={() => navigate("CompleteEditScreen", { orderId })}
 					>
 						{`${t("continue")} (${totalItems})`}
 					</Button>

@@ -3,6 +3,7 @@ import { capitalize } from "lodash";
 import { type FC, useRef } from "react";
 import { Swipeable } from "react-native-gesture-handler";
 import { Text } from "react-native-paper";
+import { useEditOrderStore } from "../../services/store/edit-order";
 import { type DishType, useOrderStore } from "../../services/store/take-order";
 import { ControlQuantity } from "../control-quantity";
 import {
@@ -30,8 +31,12 @@ export const Item: FC<Props> = ({
 	isEdit,
 	note,
 }) => {
-	const addDish = useOrderStore((state) => state.addToOrder);
-	const removeDish = useOrderStore((state) => state.removeFromOrder);
+	const addDish = isEdit
+		? useEditOrderStore((state) => state.addToOrder)
+		: useOrderStore((state) => state.addToOrder);
+	const removeDish = isEdit
+		? useEditOrderStore((state) => state.removeFromOrder)
+		: useOrderStore((state) => state.removeFromOrder);
 
 	const modifiersSet = modifiers.map((objeto: any) => objeto.name);
 
@@ -84,20 +89,17 @@ export const Item: FC<Props> = ({
 						size="small"
 						onMinusPress={() => removeDish(keyId, 1)}
 						onPlusPress={() => {
-							if (isEdit) {
-							} else {
-								addDish({
-									keyId,
-									id,
-									name,
-									picture,
-									deliveryItemType,
-									quantity: 1,
-									price: price,
-									note,
-									modifiers,
-								});
-							}
+							addDish({
+								keyId,
+								id,
+								name,
+								picture,
+								deliveryItemType,
+								quantity: 1,
+								price: price,
+								note,
+								modifiers,
+							});
 						}}
 					/>
 				</Content>

@@ -13,6 +13,7 @@
     "charge-custom": "Personalizado",
     "charge-personalized": "Metodo de pago",
     "charge-qr": "Codigo qr",
+    "complete-edit": "Completar editar orden",
     "complete-order": "Completar orden",
     "customerName": "Nombre del cliente",
     "delete": {
@@ -74,7 +75,8 @@
       "cancelled-order": "La orden se cancelo con exito",
       "make-order": "La orden se realizo con exito",
       "send-mail": "La factura se envio con exito",
-      "title": "Exito"
+      "title": "Exito",
+      "update-order": "Se han anadido correctamente mas platos a la orden"
     },
     "table-number": "Numero de mesa",
     "take-order": "Tomar orden",

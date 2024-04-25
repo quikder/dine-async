@@ -25,3 +25,16 @@ mutation MyMutation($orderId: ID!, $password: String!, $isFullyCancelled: Boolea
   }
 }
 `;
+
+export const EDIT_ORDER = gql`
+mutation EditOrder($orderId: ID!, $orderItemInput: [OrderItemInput]!, $subtotal: Decimal!) {
+  editOrder(
+    orderId: $orderId
+    orderItemInput: $orderItemInput
+    subtotal: $subtotal
+  ) {
+    success
+    error
+  }
+}
+`;

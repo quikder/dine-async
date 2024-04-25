@@ -4,11 +4,12 @@ import { Layout } from "verity-quik";
 import { AddDishes } from "../components/add-dishes";
 
 export const AddDishesScreen = () => {
-	const { restaurantId } = useRoute<any>().params;
+	const { restaurantId, orderId } = useRoute<any>().params;
+	
 
 	return (
-		<Layout title={t("dine.add-dishes")} back>
-			<AddDishes restaurantId={restaurantId} />
+		<Layout title={t("dine.add-dishes")} back customTop={-1}>
+			<AddDishes restaurantId={restaurantId} orderId={orderId} />
 		</Layout>
 	);
 };

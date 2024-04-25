@@ -8,9 +8,10 @@ import { Body, FormBox, MenuBox } from "./styled";
 
 interface Props {
 	restaurantId: string;
+	orderId: string
 }
 
-export const AddDishes: FC<Props> = ({ restaurantId }) => {
+export const AddDishes: FC<Props> = ({ restaurantId, orderId }) => {
 	const { width } = useWindowDimensions();
 	const [deliveryItemType, setDeliveryItemType] =
 		useState<DeliveryItemType>("dine-in");
@@ -30,7 +31,7 @@ export const AddDishes: FC<Props> = ({ restaurantId }) => {
 			</MenuBox>
 
 			<FormBox $width={width}>
-				<Form />
+				<Form orderId={orderId} />
 			</FormBox>
 		</Body>
 	);
