@@ -5,6 +5,7 @@ import { useWindowDimensions } from "react-native";
 import { Text } from "react-native-paper";
 import { useWidth } from "verity-quik";
 import type { DeliveryItemType } from "../../../features/take-orders/types";
+import { useEditOrderStore } from "../../../services/store/edit-order";
 import { useOrderStore } from "../../../services/store/take-order";
 import type { DishType } from "../types";
 import { Body, Image, NameContent } from "./styled";
@@ -22,7 +23,9 @@ export const Item: FC<Props> = ({ dish, deliveryItemType, isEdit }) => {
 		? { uri: picture }
 		: require("../../../../assets/assets/images/noimg.png");
 
-	const addDish = useOrderStore((state) => state.addToOrder);
+	const addDish = isEdit
+		? useEditOrderStore((state) => state.addToOrder)
+		: useOrderStore((state) => state.addToOrder);
 
 	const [isPress, setIsPress] = useState<boolean>(false);
 
@@ -35,20 +38,18 @@ export const Item: FC<Props> = ({ dish, deliveryItemType, isEdit }) => {
 	};
 
 	const handleAddDish = () => {
-		if (isEdit) {
-		} else {
-			addDish({
-				keyId: `${id}-${deliveryItemType}`,
-				id,
-				quantity: 1,
-				name,
-				price,
-				picture,
-				deliveryItemType,
-				note: "",
-				modifiers: [],
-			});
-		}
+		addDish({
+			keyId: `${id}-${deliveryItemType}`,
+			id,
+			quantity: 1,
+			name,
+			price,
+			picture,
+			deliveryItemType,
+			note: "",
+			modifiers: [],
+		});
+
 		selectionAsync();
 	};
 

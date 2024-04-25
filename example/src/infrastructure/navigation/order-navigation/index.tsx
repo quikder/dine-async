@@ -1,3 +1,4 @@
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { useRoute } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AddDishesScreen } from "../../../features/orders/screen/add-dishes.screen";
@@ -10,27 +11,33 @@ export const OrderNavigation = () => {
 	const Stack = createNativeStackNavigator();
 
 	return (
-		<Stack.Navigator screenOptions={{ headerShown: false }}>
-			<Stack.Screen
-				name="OrdersScreen"
-				component={OrdersScreen}
-				initialParams={{ restaurantId }}
-			/>
+		<BottomSheetModalProvider>
+			<Stack.Navigator screenOptions={{ headerShown: false }}>
+				<Stack.Screen
+					name="OrdersScreen"
+					component={OrdersScreen}
+					initialParams={{ restaurantId }}
+				/>
 
-			<Stack.Screen
-				name="PaymentNavigation"
-				component={PaymentsNavigation}
-				initialParams={{ restaurantId, subscriptionRoom }}
-			/>
+				<Stack.Screen
+					name="PaymentNavigation"
+					component={PaymentsNavigation}
+					initialParams={{ restaurantId, subscriptionRoom }}
+				/>
 
-			<Stack.Screen
-				name="CancelScreen"
-				component={CancelScreen}
-				initialParams={{ restaurantId }}
-			/>
-			<Stack.Group>
-				<Stack.Screen name="AddDishesScreen" component={AddDishesScreen} />
-			</Stack.Group>
-		</Stack.Navigator>
+				<Stack.Screen
+					name="CancelScreen"
+					component={CancelScreen}
+					initialParams={{ restaurantId }}
+				/>
+				<Stack.Group>
+					<Stack.Screen
+						name="AddDishesScreen"
+						component={AddDishesScreen}
+						initialParams={{ restaurantId }}
+					/>
+				</Stack.Group>
+			</Stack.Navigator>
+		</BottomSheetModalProvider>
 	);
 };
