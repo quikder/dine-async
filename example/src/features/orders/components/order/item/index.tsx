@@ -92,6 +92,7 @@ export const Item: FC<Props> = ({ order }) => {
 						{
 							actionKey: "add-dishes",
 							actionTitle: t("dine.add-dishes"),
+							menuAttributes: status === "CANCELLED" ? ["hidden"] : [],
 							icon: {
 								type: "IMAGE_SYSTEM",
 								imageValue: {
@@ -116,7 +117,8 @@ export const Item: FC<Props> = ({ order }) => {
 								{
 									actionKey: "charge-cash",
 									actionTitle: t("dine.charge-cash"),
-									menuAttributes: isPaid ? ["hidden"] : [],
+									menuAttributes:
+										isPaid || status === "CANCELLED" ? ["hidden"] : [],
 									icon: {
 										type: "IMAGE_SYSTEM",
 										imageValue: {
@@ -128,7 +130,8 @@ export const Item: FC<Props> = ({ order }) => {
 								{
 									actionKey: "charge-qr",
 									actionTitle: t("dine.charge-qr"),
-									menuAttributes: isPaid ? ["hidden"] : [],
+									menuAttributes:
+										isPaid || status === "CANCELLED" ? ["hidden"] : [],
 									icon: {
 										type: "IMAGE_SYSTEM",
 										imageValue: {
@@ -140,7 +143,8 @@ export const Item: FC<Props> = ({ order }) => {
 								{
 									actionKey: "charge-custom",
 									actionTitle: t("dine.charge-custom"),
-									menuAttributes: isPaid ? ["hidden"] : [],
+									menuAttributes:
+										isPaid || status === "CANCELLED" ? ["hidden"] : [],
 									icon: {
 										type: "IMAGE_SYSTEM",
 										imageValue: {
@@ -167,6 +171,7 @@ export const Item: FC<Props> = ({ order }) => {
 								{
 									actionKey: "invoice-print",
 									actionTitle: t("dine.print"),
+									menuAttributes: status === "CANCELLED" ? ["hidden"] : [],
 									icon: {
 										type: "IMAGE_SYSTEM",
 										imageValue: {
@@ -178,6 +183,7 @@ export const Item: FC<Props> = ({ order }) => {
 								{
 									actionKey: "invoice-mail",
 									actionTitle: t("dine.mail"),
+									menuAttributes: status === "CANCELLED" ? ["hidden"] : [],
 									icon: {
 										type: "IMAGE_SYSTEM",
 										imageValue: {
@@ -192,7 +198,8 @@ export const Item: FC<Props> = ({ order }) => {
 						{
 							actionKey: "refund-cancel",
 							actionTitle: isPaid ? t("dine.refund") : t("dine.cancel"),
-							menuAttributes: ["destructive"],
+							menuAttributes:
+								status === "CANCELLED" ? ["hidden"] : ["destructive"],
 							icon: {
 								type: "IMAGE_SYSTEM",
 								imageValue: {
