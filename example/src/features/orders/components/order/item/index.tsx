@@ -20,7 +20,7 @@ export const Item: FC<Props> = ({ order }) => {
 	const actions = (actionKey: string) => {
 		switch (actionKey) {
 			case "add-dishes":
-				console.log("Anadir plato");
+				navigate("AddDishesScreen", { orderId: order.id });
 				break;
 
 			case "charge-cash":
