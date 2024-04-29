@@ -52,6 +52,7 @@
       "title": "Nueva orden"
     },
     "note": "Nota",
+    "order-details": "Detalles de la orden",
     "orders": "Ordenes",
     "password": "Contrasena",
     "pickup": "Recoger",

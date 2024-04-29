@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AddDishesScreen } from "../../../features/orders/screen/add-dishes.screen";
 import { CancelScreen } from "../../../features/orders/screen/cancel.screen";
 import { CompleteEditScreen } from "../../../features/orders/screen/complete-edit.screen";
+import { OrderDetailsScreen } from "../../../features/orders/screen/order-details.screen";
 import { OrdersScreen } from "../../../features/orders/screen/orders.screen";
 import { PaymentsNavigation } from "./payment.navigation";
 
@@ -18,6 +19,12 @@ export const OrderNavigation = () => {
 					name="OrdersScreen"
 					component={OrdersScreen}
 					initialParams={{ restaurantId }}
+				/>
+
+				<Stack.Screen
+					name="OrderDetailsScreen"
+					component={OrderDetailsScreen}
+					initialParams={{ restaurantId, subscriptionRoom }}
 				/>
 
 				<Stack.Screen

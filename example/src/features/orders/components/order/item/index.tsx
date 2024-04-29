@@ -217,7 +217,7 @@ export const Item: FC<Props> = ({ order }) => {
 				}}
 				renderPreview={() => <Preview orderItems={order.items} />}
 			>
-				<Body>
+				<Body onPress={() => navigate("OrderDetailsScreen", { order })}>
 					<Row $status={status}>
 						<Cell>{customerName}</Cell>
 
