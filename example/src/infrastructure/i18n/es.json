@@ -70,6 +70,9 @@
     "search": {
       "order": "Buscar orden"
     },
+    "select": {
+      "charge-method": "Seleciona el metodo de cobro"
+    },
     "send": "Enviar",
     "send-invoice-mail": "Enviar factura por correo electronico",
     "success": {
