@@ -9,6 +9,8 @@
     "cancel-reason": "Rason de la cancelacion",
     "cancel-total": "Toda la orden",
     "canceled": "Cancelado",
+    "cash": "Efectivo",
+    "change": "Cambio",
     "charge": "Cobrar",
     "charge-cash": "Efectivo",
     "charge-custom": "Personalizado",
@@ -59,6 +61,7 @@
     "order-status": "Estado de la orden",
     "orders": "Ordenes",
     "password": "Contrasena",
+    "payments-method": "Metodo de pago",
     "pickup": "Recoger",
     "print": "Imprimir",
     "qr-pay": {

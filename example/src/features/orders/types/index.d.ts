@@ -86,8 +86,8 @@ export interface PaymentType {
 	amount: string;
 	chargedBy: string;
 	paymentType: string;
-	cashPayments: CashPaymentsType[];
-	cardPayments: CardPaymentsType[];
+	cashPayment: CashPaymentsType;
+	cardPayment: CardPaymentsType;
 	customPayment: CustomPayment;
 }
 

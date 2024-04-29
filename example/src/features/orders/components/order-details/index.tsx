@@ -4,6 +4,7 @@ import type { OrderType } from "../../types";
 import { FinancialDetails } from "./financial-details";
 import { Information } from "./information";
 import { OrderItems } from "./order-items";
+import { PaymentType } from "./payment-type";
 import { Status } from "./status";
 
 interface Props {
@@ -18,6 +19,7 @@ export const OrderDetails: FC<Props> = ({ order, isEmployee }) => {
 			<Information {...order} />
 			<OrderItems {...order} />
 			<FinancialDetails isEmployee={isEmployee} {...order.financialDetails} />
+			{order.isPaid && <PaymentType {...order} />}
 		</ScrollView>
 	);
 };
