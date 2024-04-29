@@ -5,7 +5,7 @@ import { OrderDetails } from "../components/order-details";
 import { Menu } from "../components/order-details/menu";
 
 export const OrderDetailsScreen = () => {
-	const { order } = useRoute<any>().params;
+	const { order, isEmployee } = useRoute<any>().params;
 
 	return (
 		<Layout
@@ -13,7 +13,7 @@ export const OrderDetailsScreen = () => {
 			back
 			actionPersonalized={<Menu order={order} />}
 		>
-			<OrderDetails order={order} />
+			<OrderDetails order={order} isEmployee={isEmployee} />
 		</Layout>
 	);
 };

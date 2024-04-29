@@ -80,6 +80,7 @@
     },
     "send": "Enviar",
     "send-invoice-mail": "Enviar factura por correo electronico",
+    "subtotal": "Subtotal",
     "success": {
       "cancelled-order": "La orden se cancelo con exito",
       "make-order": "La orden se realizo con exito",
@@ -91,7 +92,10 @@
     "table-number": "Numero de mesa",
     "take-order": "Tomar orden",
     "takeout": "Para llevar",
-    "total": "Total"
+    "tax": "Impuestos",
+    "tip": "Propina",
+    "total": "Total",
+    "total-tip": "Total con propina"
   },
   "error": {
     "payment": {

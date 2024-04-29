@@ -9,7 +9,7 @@ import { OrdersScreen } from "../../../features/orders/screen/orders.screen";
 import { PaymentsNavigation } from "./payment.navigation";
 
 export const OrderNavigation = () => {
-	const { restaurantId, subscriptionRoom } = useRoute<any>().params;
+	const { restaurantId, subscriptionRoom, isEmployee } = useRoute<any>().params;
 	const Stack = createNativeStackNavigator();
 
 	return (
@@ -24,7 +24,7 @@ export const OrderNavigation = () => {
 				<Stack.Screen
 					name="OrderDetailsScreen"
 					component={OrderDetailsScreen}
-					initialParams={{ restaurantId, subscriptionRoom }}
+					initialParams={{ restaurantId, subscriptionRoom, isEmployee }}
 				/>
 
 				<Stack.Screen

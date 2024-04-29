@@ -6,7 +6,6 @@ import { TakeOrderNavigation } from "./take-order.navigation";
 
 export const Navigation = () => {
 	const Drawer = createDrawerNavigator();
-
 	const { restaurant } = useProfile();
 
 	return (
@@ -22,6 +21,7 @@ export const Navigation = () => {
 					initialParams={{
 						restaurantId: restaurant.id,
 						subscriptionRoom: restaurant.subscriptionRoom,
+						isEmployee: true,
 					}}
 				/>
 				<Drawer.Screen
