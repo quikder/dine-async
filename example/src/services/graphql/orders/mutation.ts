@@ -38,3 +38,12 @@ mutation EditOrder($orderId: ID!, $orderItemInput: [OrderItemInput]!, $subtotal:
   }
 }
 `;
+
+export const CHANGE_ORDER_STATUS = gql`
+mutation ChangeOrderStatus($orderId: ID!, $status: String!) {
+  changeOrderStatus(orderId: $orderId, status: $status) {
+    success
+    error
+  }
+}
+`;

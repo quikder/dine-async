@@ -13,7 +13,7 @@ export const OrderDetailsScreen = () => {
 			back
 			actionPersonalized={<Menu order={order} />}
 		>
-			<OrderDetails />
+			<OrderDetails order={order} />
 		</Layout>
 	);
 };

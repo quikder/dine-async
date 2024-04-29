@@ -8,6 +8,7 @@
     "cancel-dish": "Algunos platos",
     "cancel-reason": "Rason de la cancelacion",
     "cancel-total": "Toda la orden",
+    "canceled": "Cancelado",
     "charge": "Cobrar",
     "charge-cash": "Efectivo",
     "charge-custom": "Personalizado",
@@ -19,7 +20,7 @@
     "delete": {
       "delete": "Eliminar"
     },
-    "delivered": "Entregado?",
+    "delivered": "Entregado",
     "delivery": "A domicilio",
     "delivery-dish": "Esta opcion solo afecta a los platos y no a la orden completa",
     "deliveryType": "Selecion para donde es la orden",
@@ -44,6 +45,7 @@
     "invoice": "Factura",
     "mail": "Correo electornico",
     "make-order": "Ordenar",
+    "new": "Nueva orden",
     "new-order": {
       "delivery": "Nueva orden a domicilio",
       "dine-in": "Nueva orden para la mesa {{tableNumber}}",
@@ -53,6 +55,7 @@
     },
     "note": "Nota",
     "order-details": "Detalles de la orden",
+    "order-status": "Estado de la orden",
     "orders": "Ordenes",
     "password": "Contrasena",
     "pickup": "Recoger",
@@ -66,6 +69,7 @@
       }
     },
     "qty": "Cantidad",
+    "ready": "Listo",
     "refund": "Rembolsar",
     "search": {
       "order": "Buscar orden"
