@@ -16,6 +16,7 @@
     "charge-qr": "Codigo qr",
     "complete-edit": "Completar editar orden",
     "complete-order": "Completar orden",
+    "customer-name": "Nombre del cliente",
     "customerName": "Nombre del cliente",
     "delete": {
       "delete": "Eliminar"
@@ -86,6 +87,7 @@
       "title": "Exito",
       "update-order": "Se han anadido correctamente mas platos a la orden"
     },
+    "table": "Mesa",
     "table-number": "Numero de mesa",
     "take-order": "Tomar orden",
     "takeout": "Para llevar",
