@@ -108,5 +108,6 @@
     "payment": {
       "ready": "Esta orden ya ha sido pagada"
     }
-  }
+  },
+  "without-invoice": "Sin recivo"
 }

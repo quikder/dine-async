@@ -5,7 +5,7 @@ import { type FC, type ReactNode, createContext } from "react";
 import Toast from "react-native-toast-message";
 import type { OrderType } from "../../features/orders/types";
 import { ALL_ORDERS } from "../graphql/orders/query";
-import { NEW_ORDER } from "../graphql/orders/subscriptions";
+import { NEW_ORDER, UPDATE_ORDER } from "../graphql/orders/subscriptions";
 
 export const OrderContext = createContext<null>(null);
 
@@ -55,6 +55,36 @@ export const OrderProvider: FC<Props> = ({
 			room: subscriptionRoom,
 		},
 		fetchPolicy: "cache-first",
+	});
+
+	useSubscription(UPDATE_ORDER, {
+		onData: (data) => {
+			const client = data.client;
+
+			const cacheOrders: any = client.readQuery({
+				query: ALL_ORDERS,
+				variables: { restaurantId, date: moment().format("YYYY-MM-DD") },
+			});
+
+			const updatedOrder: OrderType = data.data.data.updateOrder.order;
+
+			if (cacheOrders) {
+				const { allOrders } = cacheOrders;
+				const updatedOrders = allOrders.map((order: OrderType) =>
+					order.id === updatedOrder.id ? updatedOrder : order,
+				);
+
+				//@ts-ignore
+				client.writeQuery({
+					query: ALL_ORDERS,
+					variables: { restaurantId, date: moment().format("YYYY-MM-DD") },
+					data: { allOrders: updatedOrders },
+				});
+			}
+		},
+		variables: {
+			room: subscriptionRoom,
+		},
 	});
 
 	return <OrderContext.Provider value={null}>{children}</OrderContext.Provider>;

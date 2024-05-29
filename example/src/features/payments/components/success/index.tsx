@@ -2,6 +2,7 @@ import LottieView from "lottie-react-native";
 import { type FC, useEffect, useState } from "react";
 import { useWindowDimensions } from "react-native";
 import type { OrderType } from "../../../orders/types";
+import { MenuInvoice } from "./menu-invoice";
 import { Body, Content } from "./styled";
 
 interface Props {
@@ -34,7 +35,7 @@ export const Success: FC<Props> = () => {
 						style={{ width: "100%", height: "100%" }}
 					/>
 				) : (
-					<></>
+					<MenuInvoice />
 				)}
 			</Content>
 		</Body>
