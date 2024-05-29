@@ -8,6 +8,7 @@ import type { DeliveryItemType } from "../../../features/take-orders/types";
 import { useEditOrderStore } from "../../../services/store/edit-order";
 import { useOrderStore } from "../../../services/store/take-order";
 import type { DishType } from "../types";
+import { ModifiersModal } from "./modifier-items";
 import { Body, Image, NameContent } from "./styled";
 
 interface Props {
@@ -54,33 +55,43 @@ export const Item: FC<Props> = ({ dish, deliveryItemType, isEdit }) => {
 	};
 
 	return (
-		<Body
-			$width={width}
-			$isPress={isPress}
-			$requiresModifier={requiresModifier}
-			onPress={requiresModifier ? openModifierModal : handleAddDish}
-			onLongPress={openModifierModal}
-			onPressIn={() => setIsPress(true)}
-			onPressOut={() => setIsPress(false)}
-			$isEdit={isEdit}
-		>
-			<Image transition={0} source={source} />
+		<>
+			<Body
+				$width={width}
+				$isPress={isPress}
+				$requiresModifier={requiresModifier}
+				onPress={requiresModifier ? openModifierModal : handleAddDish}
+				onLongPress={openModifierModal}
+				onPressIn={() => setIsPress(true)}
+				onPressOut={() => setIsPress(false)}
+				$isEdit={isEdit}
+			>
+				<Image transition={0} source={source} />
 
-			<NameContent intensity={10}>
-				<Text
-					variant={useWidth(
-						width,
-						"labelSmall",
-						"labelSmall",
-						"labelSmall",
-						"labelSmall",
-						"labelLarge",
-					)}
-					style={{ color: "#fff" }}
-				>
-					{capitalize(name)}
-				</Text>
-			</NameContent>
-		</Body>
+				<NameContent intensity={10}>
+					<Text
+						variant={useWidth(
+							width,
+							"labelSmall",
+							"labelSmall",
+							"labelSmall",
+							"labelSmall",
+							"labelLarge",
+						)}
+						style={{ color: "#fff" }}
+					>
+						{capitalize(name)}
+					</Text>
+				</NameContent>
+			</Body>
+
+			<ModifiersModal
+				modalVisible={modifierModalVisible}
+				setModalVisible={setModifierModalVisible}
+				dish={dish}
+				isEdit={isEdit}
+				deliveryItemType={deliveryItemType}
+			/>
+		</>
 	);
 };

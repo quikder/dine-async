@@ -1,6 +1,7 @@
 {
   "continue": "Continuar",
   "dine": {
+    "add-dish": "Anadir plato",
     "add-dishes": "Anadir platos",
     "all": "Todo",
     "amount": "Cantidad",
@@ -48,6 +49,7 @@
     "invoice": "Factura",
     "mail": "Correo electornico",
     "make-order": "Ordenar",
+    "mandatory": "Obligatorio",
     "new": "Nueva orden",
     "new-order": {
       "delivery": "Nueva orden a domicilio",
@@ -57,6 +59,7 @@
       "title": "Nueva orden"
     },
     "note": "Nota",
+    "optional": "Opcional",
     "order-details": "Detalles de la orden",
     "order-status": "Estado de la orden",
     "orders": "Ordenes",
@@ -83,6 +86,7 @@
     },
     "send": "Enviar",
     "send-invoice-mail": "Enviar factura por correo electronico",
+    "special-instructions": "Instruciones especiales",
     "subtotal": "Subtotal",
     "success": {
       "cancelled-order": "La orden se cancelo con exito",
