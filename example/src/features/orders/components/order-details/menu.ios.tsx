@@ -22,6 +22,16 @@ export const Menu: FC<Props> = ({ order }) => {
 				navigate("AddDishesScreen", { orderId: order.id });
 				break;
 
+			case "charge-tap-to-pay":
+				isPaid
+					? () => {}
+					: navigate("PaymentNavigation", {
+							order,
+							screen: "TapToPayScreen",
+							params: { order },
+						});
+				break;
+
 			case "charge-cash":
 				isPaid
 					? () => {}
@@ -82,7 +92,8 @@ export const Menu: FC<Props> = ({ order }) => {
 						{
 							actionKey: "add-dishes",
 							actionTitle: t("dine.add-dishes"),
-							menuAttributes: status === "CANCELLED" ? ["hidden"] : [],
+							menuAttributes:
+								isPaid || status === "CANCELLED" ? ["hidden"] : [],
 							icon: {
 								type: "IMAGE_SYSTEM",
 								imageValue: {
@@ -105,6 +116,19 @@ export const Menu: FC<Props> = ({ order }) => {
 								},
 							},
 							menuItems: [
+								{
+									actionKey: "charge-tap-to-pay",
+									actionTitle: "Tap to pay",
+									menuAttributes:
+										isPaid || status === "CANCELLED" ? ["hidden"] : [],
+									icon: {
+										type: "IMAGE_SYSTEM",
+										imageValue: {
+											systemName: "wave.3.right.circle.fill",
+											scale: "large",
+										},
+									},
+								},
 								{
 									actionKey: "charge-cash",
 									actionTitle: t("dine.charge-cash"),
