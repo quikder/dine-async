@@ -8,6 +8,7 @@ interface BoxInterface {
 export const Body = styled.View<BoxInterface>`
 	width: 100%;
     flex: 1;
+	margin-bottom: 40px;
     background-color: purple;
 	justify-content: ${({ $width }) =>
 		useWidth(

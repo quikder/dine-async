@@ -2,6 +2,7 @@ import { t } from "i18next";
 import { capitalize } from "lodash";
 import type React from "react";
 import { useState } from "react";
+import { View } from "react-native";
 import { Chip, RadioButton, Text } from "react-native-paper";
 import { useTheme } from "styled-components/native";
 import { useUpdateEffect } from "verity-quik";
@@ -20,7 +21,6 @@ export const ModifierList: React.FC<Props> = ({
 		appLabel,
 		isMandatory,
 		singleSelection,
-		maxSelections,
 		modifierItems,
 	} = modifier;
 	const theme = useTheme();
@@ -89,18 +89,21 @@ export const ModifierList: React.FC<Props> = ({
 	return (
 		<Section>
 			<Row>
-				<Text variant="titleMedium">{capitalize(appLabel)}</Text>
+				<View style={{ width: "60%" }}>
+					<Text variant="titleMedium">{capitalize(appLabel)}</Text>
+				</View>
 
-				<Chip
-					style={{
-						borderRadius: 50,
-						marginLeft: 10,
-						backgroundColor: `${colorChip}`,
-					}}
-					textStyle={{ color: "#fff" }}
-				>
-					{isMandatory ? t("dine.mandatory") : t("dine.optional")}
-				</Chip>
+				<View style={{ width: "30%" }}>
+					<Chip
+						style={{
+							borderRadius: 50,
+							backgroundColor: `${colorChip}`,
+						}}
+						textStyle={{ color: "#fff" }}
+					>
+						{isMandatory ? t("dine.mandatory") : t("dine.optional")}
+					</Chip>
+				</View>
 			</Row>
 
 			{singleSelection ? (

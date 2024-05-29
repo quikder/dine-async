@@ -15,6 +15,8 @@ export const CheckItem: React.FC<Props> = ({
 	selectedModifiers,
 	modifierGroup,
 }) => {
+	console.log(modifierGroup.maxSelections);
+	
 	const [width, setWidth] = useState<number>(0);
 
 	//@ts-ignore
