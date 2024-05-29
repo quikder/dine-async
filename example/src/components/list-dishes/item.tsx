@@ -79,7 +79,7 @@ export const Item: FC<Props> = ({
 								variant="labelSmall"
 								style={{ textTransform: "capitalize" }}
 							>
-								{modifiersSet.toString().replace(",", ", ")}
+								{modifiersSet.join(", ")}
 							</Text>
 						)}
 					</InformationBox>
