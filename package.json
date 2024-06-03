@@ -171,6 +171,7 @@
     "@react-navigation/drawer": "^6.6.15",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
+    "@stripe/stripe-terminal-react-native": "^0.0.1-beta.18",
     "@ui-kitten/components": "^5.3.1",
     "@vonovak/react-native-theme-control": "^5.1.0",
     "apollo-upload-client": "^17.0.0",
