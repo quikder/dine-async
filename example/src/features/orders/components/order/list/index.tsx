@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRefresh } from "@react-native-community/hooks";
+import { lowerCase } from "lodash";
 import type { Moment } from "moment";
 import moment from "moment";
 import type { FC } from "react";
@@ -67,10 +68,19 @@ export const List: FC<Props> = ({
 		);
 	};
 
+	const IS_NUMBER = /^[0-9]+$/.test(search);
+	const displayData = filteredAndSortedOrder().filter((item: any) => {
+		if (IS_NUMBER) {
+			return item.tableNumber === Number.parseInt(search);
+		}
+
+		return lowerCase(item.customerName).includes(lowerCase(search));
+	});
+
 	return (
 		<DataTable style={{ flex: 1, marginTop: 16 }}>
 			<FlatList
-				data={filteredAndSortedOrder()}
+				data={displayData}
 				renderItem={({ item }) => <Item order={item} />}
 				keyExtractor={(item: OrderType) => item.id}
 				refreshControl={

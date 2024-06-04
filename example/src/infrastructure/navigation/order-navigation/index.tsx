@@ -18,7 +18,7 @@ export const OrderNavigation = () => {
 				<Stack.Screen
 					name="OrdersScreen"
 					component={OrdersScreen}
-					initialParams={{ restaurantId }}
+					initialParams={{ restaurantId, isEmployee }}
 				/>
 
 				<Stack.Screen

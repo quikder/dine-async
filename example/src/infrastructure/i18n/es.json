@@ -22,6 +22,7 @@
     "complete-order": "Completar orden",
     "customer-name": "Nombre del cliente",
     "customerName": "Nombre del cliente",
+    "date": "Fecha",
     "delete": {
       "delete": "Eliminar"
     },
@@ -47,6 +48,7 @@
       "table-min": "No puede ser un valor menor a 1",
       "title": "Error"
     },
+    "filter-orders": "Filtrar ordenes",
     "invoice": "Factura",
     "mail": "Correo electornico",
     "make-order": "Ordenar",
@@ -59,12 +61,15 @@
       "takeout": "Nueva orden para llevar",
       "title": "Nueva orden"
     },
+    "no-paid": "No pagado",
     "note": "Nota",
     "of": "de",
     "optional": "Opcional",
     "order-details": "Detalles de la orden",
     "order-status": "Estado de la orden",
     "orders": "Ordenes",
+    "paid": "Pagado",
+    "paid-status": "Estado del pago",
     "password": "Contrasena",
     "payments-method": "Metodo de pago",
     "pickup": "Recoger",
