@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { t } from "i18next";
-import type { Dispatch, FC, SetStateAction } from "react";
+import { type Dispatch, type FC, Fragment, type SetStateAction } from "react";
 import { useForm } from "react-hook-form";
 import { View } from "react-native";
 import { Modal, Portal, Text } from "react-native-paper";
@@ -13,6 +13,7 @@ interface MailModalProps {
 	visible: boolean;
 	setVisible: Dispatch<SetStateAction<boolean>>;
 	order: OrderType;
+	usePortal?: boolean;
 }
 
 interface Form {
@@ -23,6 +24,7 @@ export const MailModal: FC<MailModalProps> = ({
 	visible,
 	setVisible,
 	order,
+	usePortal
 }) => {
 	const hideModal = () => setVisible(false);
 
@@ -53,8 +55,10 @@ export const MailModal: FC<MailModalProps> = ({
 		});
 	};
 
+	const Port = usePortal ? Portal : Fragment
+
 	return (
-		<Portal>
+		<Port>
 			<Modal
 				visible={visible}
 				onDismiss={hideModal}
@@ -83,6 +87,6 @@ export const MailModal: FC<MailModalProps> = ({
 					</Button>
 				</View>
 			</Modal>
-		</Portal>
+		</Port>
 	);
 };

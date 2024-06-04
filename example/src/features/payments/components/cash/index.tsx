@@ -39,14 +39,16 @@ export const Cash: FC<Props> = ({ order }) => {
 		charge({
 			update(_, { data: { chargeInCash } }) {
 				if (chargeInCash.success) {
-					navigate("SuccessScreen", { change, order });
+					navigate("SuccessScreen", { change: change, order });
 				} else if (chargeInCash.error === "payment-ready") {
 					Toast.show({
 						type: "error",
 						text1: t("dine.error.title"),
 						text2: t("error.payment.ready"),
 					});
-					navigate("OrdersNavigation", { screen: "OrdersScreen" });
+					navigate("OrdersNavigation", {
+						screen: "OrdersScreen",
+					});
 				}
 			},
 			variables: {

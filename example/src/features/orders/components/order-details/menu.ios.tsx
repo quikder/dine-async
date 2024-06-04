@@ -234,6 +234,7 @@ export const Menu: FC<Props> = ({ order }) => {
 					visible={visibleMail}
 					setVisible={setVisibleMail}
 					order={order}
+					usePortal
 				/>
 			</ContextMenuButton>
 		</>

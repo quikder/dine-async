@@ -32,7 +32,7 @@ export const OrderProvider: FC<Props> = ({
 
 			const newOrder: OrderType = data.data.data.newOrder.order;
 
-			if (serverBy !== newOrder.servedBy.name) {
+			if (serverBy !== newOrder?.servedBy?.name) {
 				sendNotification(newOrder);
 			}
 

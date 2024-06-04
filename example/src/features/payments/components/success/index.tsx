@@ -1,6 +1,8 @@
+import { t } from "i18next";
 import LottieView from "lottie-react-native";
-import { type FC, useEffect, useState } from "react";
-import { useWindowDimensions } from "react-native";
+import { type FC, Fragment, useEffect, useState } from "react";
+import { View } from "react-native";
+import { Text } from "react-native-paper";
 import type { OrderType } from "../../../orders/types";
 import { MenuInvoice } from "./menu-invoice";
 import { Body, Content } from "./styled";
@@ -10,9 +12,9 @@ interface Props {
 	order: OrderType;
 }
 
-export const Success: FC<Props> = () => {
-	const { width } = useWindowDimensions();
+export const Success: FC<Props> = ({ change, order }) => {
 	const [animation, setAnimation] = useState(true);
+	
 
 	useEffect(() => {
 		if (animation) {
@@ -35,7 +37,20 @@ export const Success: FC<Props> = () => {
 						style={{ width: "100%", height: "100%" }}
 					/>
 				) : (
-					<MenuInvoice />
+					<Fragment>
+						<View style={{ marginBottom: 16 }}>
+							<Text variant="headlineSmall" style={{ textAlign: "center" }}>
+								{t("dine.change")} ${change}
+							</Text>
+							<Text variant="bodyMedium" style={{ textAlign: "center" }}>
+								{t("dine.of")} $
+								{Number.parseFloat(
+									order.financialDetails.totalRestaurant,
+								).toFixed(2)}
+							</Text>
+						</View>
+						<MenuInvoice order={order} />
+					</Fragment>
 				)}
 			</Content>
 		</Body>

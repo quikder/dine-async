@@ -88,12 +88,12 @@ export const Menu: FC<Props> = ({ order }) => {
 				</PaperMenu>
 
 				<PaperMenu.Item
-					onPress={() =>{
+					onPress={() => {
 						navigate("CancelScreen", { order });
 						closeMenu();
 					}}
 					title={isPaid ? t("dine.refund") : t("dine.cancel")}
-					leadingIcon={({ size, color }) => (
+					leadingIcon={({ size }) => (
 						<MaterialIcons
 							size={size}
 							name="cancel-presentation"
@@ -110,6 +110,7 @@ export const Menu: FC<Props> = ({ order }) => {
 				visible={visibleMail}
 				setVisible={setVisibleMail}
 				order={order}
+				usePortal
 			/>
 		</>
 	);

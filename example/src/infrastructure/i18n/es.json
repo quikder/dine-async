@@ -10,8 +10,8 @@
     "cancel-reason": "Rason de la cancelacion",
     "cancel-total": "Toda la orden",
     "canceled": "Cancelado",
-    "cash": "Efectivo",
     "card": "Tarjeta",
+    "cash": "Efectivo",
     "change": "Cambio",
     "charge": "Cobrar",
     "charge-cash": "Efectivo",
@@ -60,6 +60,7 @@
       "title": "Nueva orden"
     },
     "note": "Nota",
+    "of": "de",
     "optional": "Opcional",
     "order-details": "Detalles de la orden",
     "order-status": "Estado de la orden",

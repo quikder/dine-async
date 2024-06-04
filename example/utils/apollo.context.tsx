@@ -21,7 +21,7 @@ export const ApolloProvider: React.FC<{
 }> = ({ children, role }) => {
 	const cache = new InMemoryCache();
 
-	const url = "f6fb-2600-4808-58b2-8700-f4bf-fac6-8618-e4e5.ngrok-free.app";
+	const url = "f15d-2600-4808-58b2-8700-e486-a237-e00e-ab39.ngrok-free.app";
 
 	const link = createUploadLink({
 		uri: `https://${url}/graphql/`,
