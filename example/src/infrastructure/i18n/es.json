@@ -10,6 +10,7 @@
     "cancel-reason": "Rason de la cancelacion",
     "cancel-total": "Toda la orden",
     "canceled": "Cancelado",
+    "capacity": "Capacidad",
     "card": "Tarjeta",
     "cash": "Efectivo",
     "change": "Cambio",
@@ -33,6 +34,9 @@
     "dine-in": "En el restaurante",
     "dish": "Plato",
     "dishes": "Platos",
+    "empty": {
+      "table": "No existen mesas"
+    },
     "error": {
       "amount": "Indica la cantida con la que estan pagando",
       "amount-min": "No puede ser menos del total de la orden",
@@ -86,7 +90,8 @@
     "ready": "Listo",
     "refund": "Rembolsar",
     "search": {
-      "order": "Buscar orden"
+      "order": "Buscar orden",
+      "table": "Buscar mesa por numero"
     },
     "select": {
       "charge-method": "Seleciona el metodo de cobro"
@@ -104,6 +109,7 @@
     },
     "table": "Mesa",
     "table-number": "Numero de mesa",
+    "tables": "Mesas",
     "take-order": "Tomar orden",
     "takeout": "Para llevar",
     "tax": "Impuestos",
