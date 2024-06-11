@@ -11,7 +11,8 @@
 				"noExplicitAny": "off"
 			},
 			"style": {
-				"noUselessElse": "off"
+				"noUselessElse": "off",
+				"useDefaultParameterLast": "off"
 			},
 			"a11y": {
 				"useValidAriaRole": "off"

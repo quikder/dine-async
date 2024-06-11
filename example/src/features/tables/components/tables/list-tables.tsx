@@ -4,7 +4,7 @@ import type React from "react";
 import { FlatList, RefreshControl, useWindowDimensions } from "react-native";
 
 import { Empty, useWidth } from "verity-quik";
-import type { TableType } from "../types";
+import type { TableType } from "../../types";
 import { ItemTable } from "./item-table";
 
 export const ListTables: React.FC<Props> = ({ data, refetch, search }) => {

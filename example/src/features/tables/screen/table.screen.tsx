@@ -7,7 +7,7 @@ export const TableScreen = () => {
 	const { restaurantId } = useRoute<any>().params;
 
 	return (
-		<Layout title={t("dine.tables")}>
+		<Layout title={t("dine.tables")} useDrawer>
 			<Tables restaurantId={restaurantId} />
 		</Layout>
 	);

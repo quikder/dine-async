@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { I18nextProvider } from "react-i18next";
+import { Platform } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider, ToastUi } from "verity-quik";
@@ -9,16 +10,17 @@ import i18n from "./infrastructure/i18n";
 import { Navigation } from "./infrastructure/navigation";
 
 export default function App() {
+	const role = Platform.OS === "ios" ? "waiter" : "cashier";
 	return (
 		<SafeAreaProvider>
 			<I18nextProvider i18n={i18n}>
 				<ThemeProvider>
 					<ToastUi />
 					<GestureHandlerRootView style={{ flex: 1, zIndex: -1 }}>
-						<ApolloProvider role="cashier">
+						<ApolloProvider role={role}>
 							<ProfileProvider>
 								<NavigationContainer>
-									<Navigation />
+									<Navigation role={role} />
 								</NavigationContainer>
 							</ProfileProvider>
 						</ApolloProvider>

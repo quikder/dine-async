@@ -1,6 +1,8 @@
 {
   "continue": "Continuar",
   "dine": {
+    "add": "Anadir",
+    "add-customer-to-waiting": "Añadir cliente a la lista de espera",
     "add-dish": "Anadir plato",
     "add-dishes": "Anadir platos",
     "all": "Todo",
@@ -46,6 +48,7 @@
       "customerName": "Se requiere el nombre del cliente",
       "deliveryType": "Debes indicar para donde es la orden",
       "mail": "Se requiere el correo electronico",
+      "number-people": "Indica para cuántas personas",
       "password": "Contrasena incorrecta",
       "ready-cancelled": "La orden ya ha sido cancelada",
       "table": "Indica el numero de mesa",
@@ -67,6 +70,8 @@
     },
     "no-paid": "No pagado",
     "note": "Nota",
+    "number-people": "Para cuantas personas",
+    "number-people-min": "El número de personas mínimo es 1",
     "of": "de",
     "optional": "Opcional",
     "order-details": "Detalles de la orden",
@@ -91,7 +96,8 @@
     "refund": "Rembolsar",
     "search": {
       "order": "Buscar orden",
-      "table": "Buscar mesa por numero"
+      "table": "Buscar mesa por numero",
+      "waiting": "Buscar por nombre de cliente o capacidad de mesa"
     },
     "select": {
       "charge-method": "Seleciona el metodo de cobro"
@@ -105,9 +111,11 @@
       "make-order": "La orden se realizo con exito",
       "send-mail": "La factura se envio con exito",
       "title": "Exito",
-      "update-order": "Se han anadido correctamente mas platos a la orden"
+      "update-order": "Se han anadido correctamente mas platos a la orden",
+      "waiting": "Se añadió a la lista de espera con éxito"
     },
     "table": "Mesa",
+    "table-for-number": "Mesa para",
     "table-number": "Numero de mesa",
     "tables": "Mesas",
     "take-order": "Tomar orden",
@@ -115,7 +123,11 @@
     "tax": "Impuestos",
     "tip": "Propina",
     "total": "Total",
-    "total-tip": "Total con propina"
+    "total-tip": "Total con propina",
+    "wating-list": "Lista de espera"
+  },
+  "empty": {
+    "waiting-list": "No hay nadie en la lista de espera"
   },
   "error": {
     "payment": {

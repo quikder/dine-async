@@ -5,8 +5,8 @@ import type React from "react";
 import { useState } from "react";
 import { ActivityIndicator, useWindowDimensions } from "react-native";
 import { Text } from "react-native-paper";
-import { CHANGE_TABLE_AVAILABILITY } from "../../../services/graphql/tables/mutation";
-import type { TableType } from "../types";
+import { CHANGE_TABLE_AVAILABILITY } from "../../../../services/graphql/tables/mutation";
+import type { TableType } from "../../types";
 import { Body, Capacity } from "./item.styled";
 
 export const ItemTable: React.FC<TableType> = ({

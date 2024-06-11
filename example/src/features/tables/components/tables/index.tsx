@@ -4,7 +4,7 @@ import { t } from "i18next";
 import type React from "react";
 import { useState } from "react";
 import { ErrorServer, Loading, Searchbar } from "verity-quik";
-import { ALL_TABLES } from "../../../services/graphql/tables/query";
+import { ALL_TABLES } from "../../../../services/graphql/tables/query";
 import { ListTables } from "./list-tables";
 
 export const Tables: React.FC<Props> = ({ restaurantId }) => {

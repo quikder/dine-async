@@ -2,6 +2,7 @@ import { useSubscription } from "@apollo/client";
 import { t } from "i18next";
 import moment from "moment";
 import { type FC, type ReactNode, createContext } from "react";
+import { Platform } from "react-native";
 import Toast from "react-native-toast-message";
 import type { OrderType } from "../../features/orders/types";
 import { ALL_ORDERS } from "../graphql/orders/query";
@@ -59,20 +60,37 @@ export const OrderProvider: FC<Props> = ({
 
 	useSubscription(UPDATE_ORDER, {
 		onData: (data) => {
-			const client = data.client;
+			if (Platform.OS === "ios") {
+				console.log(data);
+			}
 
+			const client = data.client;
+			const updatedOrder: OrderType = data.data.data.updateOrder.order;
+
+			// Leer la caché actual de las órdenes
 			const cacheOrders: any = client.readQuery({
 				query: ALL_ORDERS,
 				variables: { restaurantId, date: moment().format("YYYY-MM-DD") },
 			});
 
-			const updatedOrder: OrderType = data.data.data.updateOrder.order;
-
 			if (cacheOrders) {
 				const { allOrders } = cacheOrders;
-				const updatedOrders = allOrders.map((order: OrderType) =>
-					order.id === updatedOrder.id ? updatedOrder : order,
+				// Verificar si la orden actualizada ya existe en el caché
+				const orderExists = allOrders.some(
+					(order: OrderType) => order.id === updatedOrder.id,
 				);
+
+				
+				let updatedOrders: any;
+				if (orderExists) {
+					// Si la orden existe, actualizarla
+					updatedOrders = allOrders.map((order: OrderType) =>
+						order.id === updatedOrder.id ? updatedOrder : order,
+					);
+				} else {
+					// Si la orden no existe, agregarla al listado
+					updatedOrders = [...allOrders, updatedOrder];
+				}
 
 				//@ts-ignore
 				client.writeQuery({

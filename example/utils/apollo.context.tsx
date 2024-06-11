@@ -21,7 +21,7 @@ export const ApolloProvider: React.FC<{
 }> = ({ children, role }) => {
 	const cache = new InMemoryCache();
 
-	const url = "c7e5-2600-4808-58b2-8700-9422-dc10-9c1b-4124.ngrok-free.app";
+	const url = "16eb-2600-4808-58b2-8700-f1-6248-bebe-1c13.ngrok-free.app";
 
 	const link = createUploadLink({
 		uri: `https://${url}/graphql/`,
@@ -49,7 +49,7 @@ export const ApolloProvider: React.FC<{
 		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTU5Njg0MjEuNzk5Njg3LCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9pZCI6IjIiLCJyb2xlIjoib3duZXIifQ.Kk1fzjcRC5cQ_TiFfv3c5HPs7oGv8_x7Vdvh5SkyfGY";
 
 	const waiterToken =
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTU5OTAzOTIuNjQ2ODQzLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9pZCI6IjQ1YWMwMTBlLThjM2EtNDBlYi1iYmVmLTExZGUzOTVhMjE1MiIsInJvbGUiOiJ3YWl0ZXIifQ.WVaJoBW9cIxWh6YjeEDZdBwpYp84asz-6SCZL_lW_UY";
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjAyMDA5NjEuMDgxMzEsInR5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoiNDVhYzAxMGUtOGMzYS00MGViLWJiZWYtMTFkZTM5NWEyMTUyIiwicm9sZSI6ImNhc2hpZXIifQ.hd0EbgPx_RCnXN_C8iGzV38qpCwAyhDn5P0fMa4qv70";
 
 	const cashierToken =
 		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTk2MDExMTEuOTM5MjAxLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9pZCI6Ijk4YjYyZWEyLTU4MTEtNDc4ZC04MzBhLWVhYzZmMWE0ZDE5MSIsInJvbGUiOiJjYXNoaWVyIn0.T4oJMgHfWd1auzoTY5Q1nCRGfZ7AWFm1qtAC8MBbu1I";
