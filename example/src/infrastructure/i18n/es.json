@@ -37,6 +37,10 @@
     "dish": "Plato",
     "dishes": "Platos",
     "empty": {
+      "order": {
+        "other": "No se encontraron órdenes en la fecha especificada",
+        "today": "Aún no tienes órdenes el día de hoy"
+      },
       "table": "No existen mesas"
     },
     "error": {

@@ -1,12 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { useRefresh } from "@react-native-community/hooks";
+import { t } from "i18next";
 import { lowerCase } from "lodash";
 import type { Moment } from "moment";
 import moment from "moment";
 import type { FC } from "react";
 import { FlatList, RefreshControl, View } from "react-native";
 import { DataTable } from "react-native-paper";
-import { ErrorServer, Loading } from "verity-quik";
+import { Empty, ErrorServer, Loading } from "verity-quik";
 import { ALL_ORDERS } from "../../../../../services/graphql/orders/query";
 import type { OrderStatusType, OrderType } from "../../../types";
 import { Item } from "../item";
@@ -81,6 +82,7 @@ export const List: FC<Props> = ({
 		<DataTable style={{ flex: 1, marginTop: 16 }}>
 			<FlatList
 				data={displayData}
+				contentContainerStyle={{ flexGrow: 1 }}
 				renderItem={({ item }) => <Item order={item} />}
 				keyExtractor={(item: OrderType) => item.id}
 				refreshControl={
@@ -88,6 +90,17 @@ export const List: FC<Props> = ({
 						refreshing={isRefreshing}
 						onRefresh={onRefresh}
 						tintColor="#999999"
+					/>
+				}
+				ListEmptyComponent={
+					<Empty
+						isEmpty={displayData.length === 0}
+						emptyText={
+							date.startOf("day").isSame(moment().startOf("day"))
+								? t("dine.empty.order.today")
+								: t("dine.empty.order.other")
+						}
+						personalizedAnimation="https://lottie.host/1ecea0f5-0be8-4bea-9e32-f1123537a809/alzd4A4NPJ.json"
 					/>
 				}
 			/>
