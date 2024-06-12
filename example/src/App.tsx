@@ -11,6 +11,7 @@ import { Navigation } from "./infrastructure/navigation";
 
 export default function App() {
 	const role = Platform.OS === "ios" ? "waiter" : "cashier";
+
 	return (
 		<SafeAreaProvider>
 			<I18nextProvider i18n={i18n}>

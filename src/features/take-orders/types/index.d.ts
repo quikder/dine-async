@@ -1,0 +1,1 @@
+export type DeliveryItemType = "dine-in" | "takeout";
