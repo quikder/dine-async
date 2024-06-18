@@ -8,9 +8,10 @@ import { Body, Cell, Row } from "./styled";
 
 interface Props {
 	order: OrderType;
+	isEmployee: boolean;
 }
 
-export const Item: FC<Props> = ({ order }) => {
+export const Item: FC<Props> = ({ order, isEmployee }) => {
 	const { navigate } = useNavigation<any>();
 
 	const {
@@ -49,7 +50,11 @@ export const Item: FC<Props> = ({ order }) => {
 						$
 						{
 							//@ts-ignore
-							Number.parseFloat(financialDetails.totalRestaurant).toFixed(2)
+							Number.parseFloat(
+								isEmployee
+									? financialDetails.totalOrder
+									: financialDetails.totalRestaurant,
+							).toFixed(2)
 						}
 					</DataTable.Cell>
 				</Row>

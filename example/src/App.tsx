@@ -1,6 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { I18nextProvider } from "react-i18next";
-import { Platform } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider, ToastUi } from "verity-quik";
@@ -10,7 +9,7 @@ import i18n from "./infrastructure/i18n";
 import { Navigation } from "./infrastructure/navigation";
 
 export default function App() {
-	const role = Platform.OS === "ios" ? "waiter" : "cashier";
+	const role = "cashier";
 
 	return (
 		<SafeAreaProvider>

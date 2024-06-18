@@ -11,7 +11,7 @@ mutation SendInvoice($email: String!, $orderId: ID!){
 
 
 export const CANCELLED_ORDER = gql`
-mutation MyMutation($orderId: ID!, $password: String!, $isFullyCancelled: Boolean!, $itemCancellationInput: [ItemCancellationInput], $reason: String = "", $totalItems: Int) {
+mutation CancelOrder($orderId: ID!, $password: String!, $isFullyCancelled: Boolean!, $itemCancellationInput: [ItemCancellationInput], $reason: String = "", $totalItems: Int) {
   cancelledOrder(
     orderId: $orderId
     password: $password
@@ -19,6 +19,32 @@ mutation MyMutation($orderId: ID!, $password: String!, $isFullyCancelled: Boolea
     itemCancellationInput: $itemCancellationInput
     reason: $reason
     totalItems: $totalItems
+  ) {
+    success
+    error
+  }
+}
+`;
+
+export const REFUND_ORDER = gql`
+mutation RefundOrder($orderId: ID!, 
+  $password: String!, 
+  $isFullyCancelled: Boolean!, 
+  $itemCancellationInput: [ItemCancellationInput], 
+  $reason: String = "", 
+  $totalItems: Int, 
+  $refundMethod: String!,
+	$amount: Decimal!
+) {
+  refoundOrder(
+    orderId: $orderId
+    password: $password
+    isFullyRefund: $isFullyCancelled
+    itemRefundInput: $itemCancellationInput
+    reason: $reason
+    totalItems: $totalItems
+    refundMethod: $refundMethod
+    amount: $amount
   ) {
     success
     error

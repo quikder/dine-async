@@ -18,6 +18,7 @@ interface Props {
 	date: Moment;
 	paidStatus: boolean | "";
 	orderStatus: OrderStatusType | "";
+	isEmployee: boolean
 }
 
 export const List: FC<Props> = ({
@@ -26,6 +27,7 @@ export const List: FC<Props> = ({
 	date,
 	paidStatus,
 	orderStatus,
+	isEmployee,
 }) => {
 	const { loading, error, data, refetch } = useQuery(ALL_ORDERS, {
 		fetchPolicy: "cache-and-network",
@@ -83,7 +85,8 @@ export const List: FC<Props> = ({
 			<FlatList
 				data={displayData}
 				contentContainerStyle={{ flexGrow: 1 }}
-				renderItem={({ item }) => <Item order={item} />}
+				showsVerticalScrollIndicator={false}
+				renderItem={({ item }) => <Item order={item} isEmployee={isEmployee} />}
 				keyExtractor={(item: OrderType) => item.id}
 				refreshControl={
 					<RefreshControl

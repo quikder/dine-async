@@ -37,6 +37,7 @@ export const OrdersScreen = () => {
 				date={date}
 				paidStatus={paidStatus}
 				orderStatus={orderStatus}
+				isEmployee={isEmployee}
 			/>
 
 			<Filter

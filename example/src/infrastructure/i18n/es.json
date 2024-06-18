@@ -98,7 +98,12 @@
     },
     "qty": "Cantidad",
     "ready": "Listo",
+    "refound": {
+      "instructions": "Seleciona el metodo de rembolso"
+    },
     "refund": "Rembolsar",
+    "refund-cash": "En efectivo",
+    "refund-original": "Metodo original",
     "search": {
       "order": "Buscar orden",
       "table": "Buscar mesa por numero",
