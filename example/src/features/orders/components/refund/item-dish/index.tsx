@@ -71,9 +71,19 @@ export const ItemDish: FC<Props> = ({ item, deliveryType }) => {
 				)}
 
 				{modifierItems.length > 0 && (
-					<Text variant="labelSmall" style={{ marginTop: -20, marginLeft: 40 }}>
-						{modifierItems.toString().replace(",", ", ")}
-					</Text>
+					<>
+						<Text
+							key={item.id}
+							variant="labelSmall"
+							style={{ marginTop: -20, marginLeft: 40 }}
+						>
+							{modifierItems
+								.map((modifier) => {
+									return modifier.name;
+								})
+								.join(", ")}
+						</Text>
+					</>
 				)}
 
 				{isChecked() && quantity > 1 && (

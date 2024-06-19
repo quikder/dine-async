@@ -7,6 +7,7 @@ import { Appbar } from "react-native-paper";
 import { Menu as PaperMenu } from "react-native-paper";
 import { useTheme } from "styled-components/native";
 import { MailModal } from "../../../../components/mail-modal";
+import { useCancelOrder } from "../../../../services/store/cancel-order";
 import type { OrderType } from "../../types";
 import { Charge } from "./charge";
 
@@ -39,6 +40,8 @@ export const Menu: FC<Props> = ({ order }) => {
 	};
 
 	const [visibleMail, setVisibleMail] = useState<boolean>(false); //Mail
+
+	const clearItems = useCancelOrder((state) => state.clearOrder);
 
 	return (
 		<>
@@ -90,6 +93,7 @@ export const Menu: FC<Props> = ({ order }) => {
 				<PaperMenu.Item
 					onPress={() => {
 						navigate("CancelScreen", { order });
+						clearItems()
 						closeMenu();
 					}}
 					title={isPaid ? t("dine.refund") : t("dine.cancel")}

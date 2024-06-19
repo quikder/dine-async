@@ -4,6 +4,7 @@ import { type FC, useState } from "react";
 import { ContextMenuButton } from "react-native-ios-context-menu";
 import { Appbar } from "react-native-paper";
 import { MailModal } from "../../../../components/mail-modal";
+import { useCancelOrder } from "../../../../services/store/cancel-order";
 import type { OrderType } from "../../types";
 
 interface Props {
@@ -15,21 +16,12 @@ export const Menu: FC<Props> = ({ order }) => {
 	const [visibleMail, setVisibleMail] = useState<boolean>(false); //Mail
 
 	const { status, isPaid } = order;
+	const clearItems = useCancelOrder((state) => state.clearOrder);
 
 	const actions = (actionKey: string) => {
 		switch (actionKey) {
 			case "add-dishes":
 				navigate("AddDishesScreen", { orderId: order.id });
-				break;
-
-			case "charge-tap-to-pay":
-				isPaid
-					? () => {}
-					: navigate("PaymentNavigation", {
-							order,
-							screen: "TapToPayScreen",
-							params: { order },
-						});
 				break;
 
 			case "charge-cash":
@@ -70,6 +62,7 @@ export const Menu: FC<Props> = ({ order }) => {
 				break;
 
 			case "refund-cancel":
+				clearItems()
 				navigate("CancelScreen", { order });
 				break;
 
@@ -116,19 +109,6 @@ export const Menu: FC<Props> = ({ order }) => {
 								},
 							},
 							menuItems: [
-								{
-									actionKey: "charge-tap-to-pay",
-									actionTitle: "Tap to pay",
-									menuAttributes:
-										isPaid || status === "CANCELLED" ? ["hidden"] : [],
-									icon: {
-										type: "IMAGE_SYSTEM",
-										imageValue: {
-											systemName: "wave.3.right.circle.fill",
-											scale: "large",
-										},
-									},
-								},
 								{
 									actionKey: "charge-cash",
 									actionTitle: t("dine.charge-cash"),

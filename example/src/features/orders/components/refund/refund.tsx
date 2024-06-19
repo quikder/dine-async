@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const Refund: FC<Props> = ({ order }) => {
-	const { navigate } = useNavigation<any>();
+	const { goBack } = useNavigation();
 	const theme = useTheme();
 	const { dishes } = useCancelOrder();
 	const clearItems = useCancelOrder((state) => state.clearOrder);
@@ -37,7 +37,7 @@ export const Refund: FC<Props> = ({ order }) => {
 	const [refundOrder, { loading, data }] = useMutation(REFUND_ORDER, {
 		update(_, { data: { refoundOrder } }) {
 			if (refoundOrder?.success) {
-				navigate("OrderScreen");
+				goBack();
 				Toast.show({
 					type: "success",
 					text1: t("dine.success.title"),
@@ -51,10 +51,20 @@ export const Refund: FC<Props> = ({ order }) => {
 				});
 
 				clearItems();
-				navigate("OrderScreen");
+				goBack();
 			}
 		},
 	});
+
+	const amount = Number.parseFloat(
+		dishes
+			.reduce(
+				//@ts-ignore
+				(acc, item) => acc + Number.parseFloat(item.price),
+				0,
+			)
+			.toFixed(2),
+	);
 	const onSubmit = (data: FormType) => {
 		const totalItems = data.isFullyCancelled
 			? order.items.reduce((acc, item) => acc + item.quantity, 0)
@@ -70,10 +80,14 @@ export const Refund: FC<Props> = ({ order }) => {
 				reason: data.reason,
 				totalItems,
 				refundMethod: data.refundMethod,
-				amount: order.financialDetails.totalOrder,
+				amount: data.isFullyCancelled
+					? order.financialDetails.totalOrder
+					: amount.toFixed(2),
 			},
 		});
 	};
+
+	console.log(dishes);
 
 	return (
 		<ScrollView
@@ -150,13 +164,19 @@ export const Refund: FC<Props> = ({ order }) => {
 
 			{watch("refundMethod") === "cash" ? (
 				<Text style={{ marginVertical: 10 }}>
-					Debes debolver el total de ${order.financialDetails.totalOrder} en
-					efectivo
+					Debes debolver el total de $
+					${watch("isFullyCancelled")
+						? order.financialDetails.totalOrder
+						: amount}{" "}
+					en efectivo
 				</Text>
 			) : (
 				<Text style={{ marginVertical: 10 }}>
-					Se devolvera el total de ${order.financialDetails.totalOrder} a la
-					tarjeta con la que se realizo el pago en un periodo de 7 dias
+					Se devolvera el total de $
+					{watch("isFullyCancelled")
+						? order.financialDetails.totalOrder
+						: amount}{" "}
+					a la tarjeta con la que se realizo el pago en un periodo de 7 dias
 				</Text>
 			)}
 
