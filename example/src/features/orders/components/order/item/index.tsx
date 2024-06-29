@@ -9,6 +9,7 @@ import { Body, Cell, Row } from "./styled";
 interface Props {
 	order: OrderType;
 	isEmployee: boolean;
+	restaurantId: string
 }
 
 export const Item: FC<Props> = ({ order, isEmployee }) => {

@@ -13,6 +13,7 @@ import { Charge } from "./charge";
 
 interface Props {
 	order: OrderType;
+	restaurantId: string;
 }
 
 export const Menu: FC<Props> = ({ order }) => {

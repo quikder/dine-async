@@ -1,22 +1,27 @@
 import { useNavigation } from "@react-navigation/native";
+
 import { t } from "i18next";
 import { type FC, useState } from "react";
 import { ContextMenuButton } from "react-native-ios-context-menu";
 import { Appbar } from "react-native-paper";
 import { MailModal } from "../../../../components/mail-modal";
+import { usePrinter } from "../../../../hooks/usePrinter";
 import { useCancelOrder } from "../../../../services/store/cancel-order";
 import type { OrderType } from "../../types";
 
 interface Props {
 	order: OrderType;
+	restaurantId: string;
 }
 
-export const Menu: FC<Props> = ({ order }) => {
+export const Menu: FC<Props> = ({ order, restaurantId }) => {
 	const { navigate } = useNavigation<any>();
 	const [visibleMail, setVisibleMail] = useState<boolean>(false); //Mail
 
 	const { status, isPaid } = order;
 	const clearItems = useCancelOrder((state) => state.clearOrder);
+
+	const { printInvoice } = usePrinter(order, restaurantId);
 
 	const actions = (actionKey: string) => {
 		switch (actionKey) {
@@ -55,6 +60,7 @@ export const Menu: FC<Props> = ({ order }) => {
 				break;
 
 			case "invoice-print":
+				printInvoice();
 				break;
 
 			case "invoice-mail":
@@ -62,7 +68,7 @@ export const Menu: FC<Props> = ({ order }) => {
 				break;
 
 			case "refund-cancel":
-				clearItems()
+				clearItems();
 				navigate("CancelScreen", { order });
 				break;
 
@@ -70,9 +76,6 @@ export const Menu: FC<Props> = ({ order }) => {
 				break;
 		}
 	};
-	// const [visible, setVisible] = useState<boolean>(false);
-	// const openMenu = () => setVisible(true);
-	// const closeMenu = () => setVisible(false);
 
 	return (
 		<>

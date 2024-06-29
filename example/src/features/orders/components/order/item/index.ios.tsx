@@ -5,6 +5,7 @@ import { ContextMenuView } from "react-native-ios-context-menu";
 import { DataTable } from "react-native-paper";
 import { useTheme } from "styled-components/native";
 import { MailModal } from "../../../../../components/mail-modal";
+import { usePrinter } from "../../../../../hooks/usePrinter";
 import type { OrderType } from "../../../types";
 import { Preview } from "../preview";
 import { Body, Cell, Row } from "./styled";
@@ -12,11 +13,13 @@ import { Body, Cell, Row } from "./styled";
 interface Props {
 	order: OrderType;
 	isEmployee: boolean;
+	restaurantId: string;
 }
 
-export const Item: FC<Props> = ({ order, isEmployee }) => {
+export const Item: FC<Props> = ({ order, isEmployee, restaurantId }) => {
 	const { navigate } = useNavigation<any>();
 	const [visibleMail, setVisibleMail] = useState<boolean>(false); //Mail
+	const { printInvoice } = usePrinter(order, restaurantId);
 
 	const actions = (actionKey: string) => {
 		switch (actionKey) {
@@ -55,6 +58,7 @@ export const Item: FC<Props> = ({ order, isEmployee }) => {
 				break;
 
 			case "invoice-print":
+				printInvoice()
 				break;
 
 			case "invoice-mail":
@@ -256,6 +260,7 @@ export const Item: FC<Props> = ({ order, isEmployee }) => {
 				visible={visibleMail}
 				setVisible={setVisibleMail}
 				order={order}
+				usePortal
 			/>
 		</>
 	);

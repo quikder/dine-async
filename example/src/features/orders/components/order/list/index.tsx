@@ -86,7 +86,7 @@ export const List: FC<Props> = ({
 				data={displayData}
 				contentContainerStyle={{ flexGrow: 1 }}
 				showsVerticalScrollIndicator={false}
-				renderItem={({ item }) => <Item order={item} isEmployee={isEmployee} />}
+				renderItem={({ item }) => <Item order={item} isEmployee={isEmployee} restaurantId={restaurantId} />}
 				keyExtractor={(item: OrderType) => item.id}
 				refreshControl={
 					<RefreshControl

@@ -98,3 +98,27 @@ query AllOrders($restaurantId: ID!, $date: Date!) {
   }
 }
 `;
+
+export const RESTAURANT_INVOICE = gql`
+query RestaurantInvoice($restaurantId: ID!){
+  restaurantInvoice(restaurantId: $restaurantId){
+    name
+    phoneNumbers{
+      number
+    }
+    address{
+      streetAddress,
+      city,
+      stateProvince, 
+      postalCode
+    }
+    billSettings{
+      taxPercentage, 
+      isIncludeTip
+      tipPercentage
+      usePayQr
+      stripeMobileCommission
+    }
+  }
+}
+`;

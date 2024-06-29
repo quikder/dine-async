@@ -9,7 +9,7 @@ import { Menu } from "../components/order-details/menu";
 import type { OrderType } from "../types";
 
 export const OrderDetailsScreen = () => {
-	const { order, isEmployee, subscriptionRoom } = useRoute<any>().params;
+	const { order, isEmployee, subscriptionRoom, restaurantId } = useRoute<any>().params;
 	const [orderData, setOrderData] = useState<OrderType>(order);
 
 	useSubscription(UPDATE_ORDER_DETAILS, {
@@ -26,7 +26,7 @@ export const OrderDetailsScreen = () => {
 		<Layout
 			title={t("dine.order-details")}
 			back
-			actionPersonalized={<Menu order={order} />}
+			actionPersonalized={<Menu order={order} restaurantId={restaurantId} />}
 		>
 			<OrderDetails order={orderData} isEmployee={isEmployee} />
 		</Layout>
